@@ -1,5 +1,5 @@
 /*
-Copyright 2015 The Kubernetes Authors.
+Copyright 2016 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,6 +16,4 @@ limitations under the License.
 
 // +k8s:deepcopy-gen=package,register
 
-// Package v1 is the v1 version of the API.
-// +genconversion=true
-package v1
+package authentication

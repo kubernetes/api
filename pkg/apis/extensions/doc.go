@@ -14,19 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package resource
+// +k8s:deepcopy-gen=package,register
 
-import (
-	inf "gopkg.in/inf.v0"
-
-	conversion "k8s.io/kubernetes/pkg/conversion"
-)
-
-func DeepCopy_resource_Quantity(in Quantity, out *Quantity, c *conversion.Cloner) error {
-	*out = in
-	if in.d.Dec != nil {
-		tmp := &inf.Dec{}
-		out.d.Dec = tmp.Set(in.d.Dec)
-	}
-	return nil
-}
+package extensions
