@@ -12,6 +12,7 @@ load(
 
 go_library(
     name = "go_default_library",
-    srcs = ["util.go"],
+    srcs = ["helpers.go"],
     tags = ["automanaged"],
+    deps = ["//pkg/api/v1:go_default_library"],
 )

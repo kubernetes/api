@@ -12,15 +12,12 @@ load(
 
 go_library(
     name = "go_default_library",
-    srcs = [
-        "annotations.go",
-        "util.go",
-    ],
+    srcs = ["util.go"],
     tags = ["automanaged"],
     deps = [
         "//pkg/api/v1:go_default_library",
-        "//pkg/util/net/sets:go_default_library",
-        "//vendor:github.com/golang/glog",
+        "//pkg/types:go_default_library",
+        "//pkg/util/hash:go_default_library",
     ],
 )
 
@@ -31,6 +28,7 @@ go_test(
     tags = ["automanaged"],
     deps = [
         "//pkg/api/v1:go_default_library",
-        "//pkg/util/net/sets:go_default_library",
+        "//pkg/types:go_default_library",
+        "//vendor:github.com/davecgh/go-spew/spew",
     ],
 )
