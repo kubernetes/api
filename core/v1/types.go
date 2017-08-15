@@ -1410,9 +1410,11 @@ type LocalVolumeSource struct {
 
 // ContainerPort represents a network port in a single container.
 type ContainerPort struct {
-	// If specified, this must be an IANA_SVC_NAME and unique within the pod. Each
-	// named port in a pod must have a unique name. Name for the port that can be
-	// referred to by services.
+	// Name for the port that can be referred to by services. If specified, this
+	// must be unique within the pod. (Each named port in a pod must have a unique name.)
+	// Name must be no more than 15 characters long, contain at least one letter 
+	// [a-z], and contain only [a-z0-9-]. Hypens ('-') cannot be leading or 
+	// trailing character of the string and cannot be adjacent to other hyphens.
 	// +optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Number of port to expose on the host.
