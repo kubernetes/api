@@ -199,6 +199,10 @@
       "Rev": "f16ee4db044a21569fc95031aba96d08c5f28e7e"
     },
     {
+      "ImportPath": "k8s.io/apimachinery/pkg/util/validation/field",
+      "Rev": "f16ee4db044a21569fc95031aba96d08c5f28e7e"
+    },
+    {
       "ImportPath": "k8s.io/apimachinery/pkg/util/wait",
       "Rev": "f16ee4db044a21569fc95031aba96d08c5f28e7e"
     },
