@@ -1,5 +1,5 @@
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright 2016 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1
+package v2beta1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -23,10 +23,10 @@ import (
 )
 
 // GroupName is the group name use in this package
-const GroupName = "authorization.k8s.io"
+const GroupName = "autoscaling"
 
 // SchemeGroupVersion is group version used to register these objects
-var SchemeGroupVersion = schema.GroupVersion{Group: GroupName, Version: "v1"}
+var SchemeGroupVersion = schema.GroupVersion{Group: GroupName, Version: "v2beta1"}
 
 // Resource takes an unqualified resource and returns a Group qualified GroupResource
 func Resource(resource string) schema.GroupResource {
@@ -44,12 +44,9 @@ var (
 // Adds the list of known types to api.Scheme.
 func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
-		&SelfSubjectRulesReview{},
-		&SelfSubjectAccessReview{},
-		&SubjectAccessReview{},
-		&LocalSubjectAccessReview{},
+		&HorizontalPodAutoscaler{},
+		&HorizontalPodAutoscalerList{},
 	)
-
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil
 }
