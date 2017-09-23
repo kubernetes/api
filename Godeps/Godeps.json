@@ -139,10 +139,6 @@
 			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
 		},
 		{
-			"ImportPath": "k8s.io/apimachinery/pkg/apis/meta/v1",
-			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
-		},
-		{
 			"ImportPath": "k8s.io/apimachinery/pkg/conversion",
 			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
 		},
@@ -217,6 +213,30 @@
 		{
 			"ImportPath": "k8s.io/kube-openapi/pkg/common",
 			"Rev": "868f2f29720b192240e18284659231b440f9cda5"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/api/resource",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/apis/meta/v1",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/runtime",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/runtime/schema",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/types",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/util/intstr",
+			"Rev": "3b05bbfa0a45413bfa184edbf9af617e277962fb"
 		}
 	]
 }
