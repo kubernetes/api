@@ -3589,6 +3589,9 @@ type NodeSpec struct {
 	// The DynamicKubeletConfig feature gate must be enabled for the Kubelet to use this field
 	// +optional
 	ConfigSource *NodeConfigSource `json:"configSource,omitempty" protobuf:"bytes,6,opt,name=configSource"`
+	// Message describes reason why node is marked as unschedulable or notready. By default, message is empty.
+	// +optional
+	Message string `json:"message,omitempty" protobuf:"varint,7,opt,name=message"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
