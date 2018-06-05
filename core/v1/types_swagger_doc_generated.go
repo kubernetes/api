@@ -170,11 +170,24 @@ func (CephFSVolumeSource) SwaggerDoc() map[string]string {
 	return map_CephFSVolumeSource
 }
 
+var map_CinderPersistentVolumeSource = map[string]string{
+	"":          "Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.",
+	"volumeID":  "volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"fsType":    "Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"readOnly":  "Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"secretRef": "Optional: points to a secret object containing parameters used to connect to OpenStack.",
+}
+
+func (CinderPersistentVolumeSource) SwaggerDoc() map[string]string {
+	return map_CinderPersistentVolumeSource
+}
+
 var map_CinderVolumeSource = map[string]string{
-	"":         "Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.",
-	"volumeID": "volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
-	"fsType":   "Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
-	"readOnly": "Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"":          "Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.",
+	"volumeID":  "volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"fsType":    "Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"readOnly":  "Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md",
+	"secretRef": "Optional: points to a secret object containing parameters used to connect to OpenStack.",
 }
 
 func (CinderVolumeSource) SwaggerDoc() map[string]string {
@@ -1060,7 +1073,7 @@ func (NodeSelectorRequirement) SwaggerDoc() map[string]string {
 }
 
 var map_NodeSelectorTerm = map[string]string{
-	"":                 "A null or empty node selector term matches no objects. The requirements of them are ANDed.",
+	"":                 "A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.",
 	"matchExpressions": "A list of node selector requirements by node's labels.",
 	"matchFields":      "A list of node selector requirements by node's fields.",
 }
@@ -1790,9 +1803,10 @@ func (ResourceQuotaList) SwaggerDoc() map[string]string {
 }
 
 var map_ResourceQuotaSpec = map[string]string{
-	"":       "ResourceQuotaSpec defines the desired hard limits to enforce for Quota.",
-	"hard":   "Hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/",
-	"scopes": "A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.",
+	"":              "ResourceQuotaSpec defines the desired hard limits to enforce for Quota.",
+	"hard":          "hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/",
+	"scopes":        "A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.",
+	"scopeSelector": "scopeSelector is also a collection of filters like scopes that must match each object tracked by a quota but expressed using ScopeSelectorOperator in combination with possible values. For a resource to match, both scopes AND scopeSelector (if specified in spec), must be matched.",
 }
 
 func (ResourceQuotaSpec) SwaggerDoc() map[string]string {
@@ -1865,6 +1879,26 @@ var map_ScaleIOVolumeSource = map[string]string{
 
 func (ScaleIOVolumeSource) SwaggerDoc() map[string]string {
 	return map_ScaleIOVolumeSource
+}
+
+var map_ScopeSelector = map[string]string{
+	"":                 "A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.",
+	"matchExpressions": "A list of scope selector requirements by scope of the resources.",
+}
+
+func (ScopeSelector) SwaggerDoc() map[string]string {
+	return map_ScopeSelector
+}
+
+var map_ScopedResourceSelectorRequirement = map[string]string{
+	"":          "A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.",
+	"scopeName": "The name of the scope that the selector applies to.",
+	"operator":  "Represents a scope's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist.",
+	"values":    "An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.",
+}
+
+func (ScopedResourceSelectorRequirement) SwaggerDoc() map[string]string {
+	return map_ScopedResourceSelectorRequirement
 }
 
 var map_Secret = map[string]string{
@@ -2149,6 +2183,25 @@ var map_Toleration = map[string]string{
 
 func (Toleration) SwaggerDoc() map[string]string {
 	return map_Toleration
+}
+
+var map_TopologySelectorLabelRequirement = map[string]string{
+	"":       "A topology selector requirement is a selector that matches given label. This is an alpha feature and may change in the future.",
+	"key":    "The label key that the selector applies to.",
+	"values": "An array of string values. One value must match the label to be selected. Each entry in Values is ORed.",
+}
+
+func (TopologySelectorLabelRequirement) SwaggerDoc() map[string]string {
+	return map_TopologySelectorLabelRequirement
+}
+
+var map_TopologySelectorTerm = map[string]string{
+	"": "A topology selector term represents the result of label queries. A null or empty topology selector term matches no objects. The requirements of them are ANDed. It provides a subset of functionality as NodeSelectorTerm. This is an alpha feature and may change in the future.",
+	"matchLabelExpressions": "A list of topology selector requirements by labels.",
+}
+
+func (TopologySelectorTerm) SwaggerDoc() map[string]string {
+	return map_TopologySelectorTerm
 }
 
 var map_Volume = map[string]string{
