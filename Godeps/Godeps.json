@@ -1,7 +1,7 @@
 {
 	"ImportPath": "k8s.io/api",
-	"GoVersion": "go1.12",
-	"GodepVersion": "v80",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80-k8s-r1",
 	"Packages": [
 		"./..."
 	],
@@ -100,10 +100,6 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery/pkg/api/apitesting/fuzzer",
-			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
-		},
-		{
-			"ImportPath": "k8s.io/apimachinery/pkg/api/apitesting/roundtrip",
 			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
 		},
 		{
@@ -245,6 +241,46 @@
 		{
 			"ImportPath": "k8s.io/klog",
 			"Rev": "8139d8cb77af419532b33dfa7dd09fbc5f1d344f"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/api/apitesting/fuzzer",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/api/apitesting/roundtrip",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/api/resource",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/apis/meta/fuzzer",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/apis/meta/v1",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/runtime",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/runtime/schema",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/runtime/serializer",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/types",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
+		},
+		{
+			"ImportPath": "k8s.io/apimachinery/pkg/util/intstr",
+			"Rev": "e754928689d08ca45123d0b3e4dbbd3a7f397161"
 		},
 		{
 			"ImportPath": "sigs.k8s.io/yaml",
