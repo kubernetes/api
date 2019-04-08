@@ -7,7 +7,7 @@ go 1.12
 require (
 	github.com/gogo/protobuf v1.1.1
 	github.com/stretchr/testify v1.2.2
-	k8s.io/apimachinery v0.0.0-20190405172352-ba051b3c4d9d
+	k8s.io/apimachinery v0.0.0-20190408172354-163010d6465f
 )
 
 replace (
@@ -263,7 +263,7 @@ replace (
 	gopkg.in/yaml.v1 => gopkg.in/yaml.v1 v1.0.0-20140924161607-9f9df34309c0
 	gopkg.in/yaml.v2 => gopkg.in/yaml.v2 v2.2.1
 	gotest.tools => gotest.tools v2.2.0+incompatible
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190405172352-ba051b3c4d9d
+	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190408172354-163010d6465f
 	k8s.io/gengo => k8s.io/gengo v0.0.0-20190116091435-f8a0810f38af
 	k8s.io/heapster => k8s.io/heapster v1.2.0-beta.1
 	k8s.io/klog => k8s.io/klog v0.0.0-20190306015804-8e90cee79f82
