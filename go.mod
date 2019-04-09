@@ -7,7 +7,7 @@ go 1.12
 require (
 	github.com/gogo/protobuf v1.1.1
 	github.com/stretchr/testify v1.2.2
-	k8s.io/apimachinery v0.0.0
+	k8s.io/apimachinery v0.0.0-20190409092423-760d1845f48b
 )
 
 replace (
@@ -43,29 +43,8 @@ replace (
 	gopkg.in/inf.v0 => gopkg.in/inf.v0 v0.9.0
 	gopkg.in/tomb.v1 => gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
 	gopkg.in/yaml.v2 => gopkg.in/yaml.v2 v2.2.1
-	k8s.io/api => ../api
-	k8s.io/apiextensions-apiserver => ../apiextensions-apiserver
-	k8s.io/apimachinery => ../apimachinery
-	k8s.io/apiserver => ../apiserver
-	k8s.io/cli-runtime => ../cli-runtime
-	k8s.io/client-go => ../client-go
-	k8s.io/cloud-provider => ../cloud-provider
-	k8s.io/cluster-bootstrap => ../cluster-bootstrap
-	k8s.io/code-generator => ../code-generator
-	k8s.io/component-base => ../component-base
-	k8s.io/cri-api => ../cri-api
-	k8s.io/csi-translation-lib => ../csi-translation-lib
+	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190409092423-760d1845f48b
 	k8s.io/klog => k8s.io/klog v0.0.0-20190306015804-8e90cee79f82
-	k8s.io/kube-aggregator => ../kube-aggregator
-	k8s.io/kube-controller-manager => ../kube-controller-manager
 	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20190228160746-b3a7cee44a30
-	k8s.io/kube-proxy => ../kube-proxy
-	k8s.io/kube-scheduler => ../kube-scheduler
-	k8s.io/kubelet => ../kubelet
-	k8s.io/metrics => ../metrics
-	k8s.io/node-api => ../node-api
-	k8s.io/sample-apiserver => ../sample-apiserver
-	k8s.io/sample-cli-plugin => ../sample-cli-plugin
-	k8s.io/sample-controller => ../sample-controller
 	sigs.k8s.io/yaml => sigs.k8s.io/yaml v1.1.0
 )
