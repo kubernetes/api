@@ -36,7 +36,7 @@
 		},
 		{
 			"ImportPath": "github.com/golang/protobuf",
-			"Rev": "v1.1.0"
+			"Rev": "v1.2.0"
 		},
 		{
 			"ImportPath": "github.com/google/gofuzz",
@@ -136,7 +136,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "40a3f73b0fa2"
+			"Rev": "07d458fe0356"
 		},
 		{
 			"ImportPath": "k8s.io/klog",
