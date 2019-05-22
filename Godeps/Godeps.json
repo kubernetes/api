@@ -140,11 +140,11 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "b74e4c97951f"
+			"Rev": "e59c2fb0a8e5"
 		},
 		{
 			"ImportPath": "k8s.io/klog",
-			"Rev": "v0.3.0"
+			"Rev": "v0.3.1"
 		},
 		{
 			"ImportPath": "k8s.io/kube-openapi",
