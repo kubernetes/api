@@ -28,7 +28,7 @@
 		},
 		{
 			"ImportPath": "github.com/gogo/protobuf",
-			"Rev": "342cbe0a0415"
+			"Rev": "v1.0.0"
 		},
 		{
 			"ImportPath": "github.com/golang/groupcache",
@@ -156,7 +156,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "99a332dfcf06"
+			"Rev": "4cfb76a8bf76"
 		},
 		{
 			"ImportPath": "k8s.io/klog",
