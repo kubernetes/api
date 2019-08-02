@@ -1,5 +1,5 @@
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright 2019 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1beta1
+package v1
 
 import (
 	authenticationv1 "k8s.io/api/authentication/v1"
@@ -54,11 +54,11 @@ type AdmissionRequest struct {
 	// RequestKind is the fully-qualified type of the original API request (for example, v1.Pod or autoscaling.v1.Scale).
 	// If this is specified and differs from the value in "kind", an equivalent match and conversion was performed.
 	//
-	// For example, if deployments can be modified via apps/v1 and apps/v1beta1, and a webhook registered a rule of
+	// For example, if deployments can be modified via apps/v1 and apps/v1, and a webhook registered a rule of
 	// `apiGroups:["apps"], apiVersions:["v1"], resources: ["deployments"]` and `matchPolicy: Equivalent`,
-	// an API request to apps/v1beta1 deployments would be converted and sent to the webhook
+	// an API request to apps/v1 deployments would be converted and sent to the webhook
 	// with `kind: {group:"apps", version:"v1", kind:"Deployment"}` (matching the rule the webhook registered for),
-	// and `requestKind: {group:"apps", version:"v1beta1", kind:"Deployment"}` (indicating the kind of the original API request).
+	// and `requestKind: {group:"apps", version:"v1", kind:"Deployment"}` (indicating the kind of the original API request).
 	//
 	// See documentation for the "matchPolicy" field in the webhook configuration type for more details.
 	// +optional
@@ -66,11 +66,11 @@ type AdmissionRequest struct {
 	// RequestResource is the fully-qualified resource of the original API request (for example, v1.pods).
 	// If this is specified and differs from the value in "resource", an equivalent match and conversion was performed.
 	//
-	// For example, if deployments can be modified via apps/v1 and apps/v1beta1, and a webhook registered a rule of
+	// For example, if deployments can be modified via apps/v1 and apps/v1, and a webhook registered a rule of
 	// `apiGroups:["apps"], apiVersions:["v1"], resources: ["deployments"]` and `matchPolicy: Equivalent`,
-	// an API request to apps/v1beta1 deployments would be converted and sent to the webhook
+	// an API request to apps/v1 deployments would be converted and sent to the webhook
 	// with `resource: {group:"apps", version:"v1", resource:"deployments"}` (matching the resource the webhook registered for),
-	// and `requestResource: {group:"apps", version:"v1beta1", resource:"deployments"}` (indicating the resource of the original API request).
+	// and `requestResource: {group:"apps", version:"v1", resource:"deployments"}` (indicating the resource of the original API request).
 	//
 	// See documentation for the "matchPolicy" field in the webhook configuration type.
 	// +optional
@@ -115,7 +115,7 @@ type AdmissionRequest struct {
 // AdmissionResponse describes an admission response.
 type AdmissionResponse struct {
 	// UID is an identifier for the individual request/response.
-	// This should be copied over from the corresponding AdmissionRequest.
+	// This must be copied over from the corresponding AdmissionRequest.
 	UID types.UID `json:"uid" protobuf:"bytes,1,opt,name=uid"`
 
 	// Allowed indicates whether or not the admission request was permitted.
