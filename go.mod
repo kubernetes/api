@@ -7,11 +7,11 @@ go 1.12
 require (
 	github.com/gogo/protobuf v1.2.2-0.20190723190241-65acae22fc9d
 	github.com/stretchr/testify v1.3.0
-	k8s.io/apimachinery v0.0.0-20191114085943-74d7e7be7d5a
+	k8s.io/apimachinery v0.0.0-20191114215425-67a48e0c9266
 )
 
 replace (
-	golang.org/x/sys => golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a
-	golang.org/x/tools => golang.org/x/tools v0.0.0-20190821162956-65e3620a7ae7
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20191114085943-74d7e7be7d5a
+	golang.org/x/sys => golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a // pinned to release-branch.go1.13
+	golang.org/x/tools => golang.org/x/tools v0.0.0-20190821162956-65e3620a7ae7 // pinned to release-branch.go1.13
+	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20191114215425-67a48e0c9266
 )
