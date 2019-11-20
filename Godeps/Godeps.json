@@ -168,7 +168,7 @@
 		},
 		{
 			"ImportPath": "github.com/stretchr/testify",
-			"Rev": "v1.3.0"
+			"Rev": "v1.4.0"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto",
@@ -220,7 +220,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "3c7067801da2"
+			"Rev": "41065c7a8c2a"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
