@@ -28,7 +28,7 @@
 		},
 		{
 			"ImportPath": "github.com/elazarl/goproxy",
-			"Rev": "c4fc26588b6e"
+			"Rev": "947c36da3153"
 		},
 		{
 			"ImportPath": "github.com/emicklei/go-restful",
@@ -220,7 +220,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "44bd77c24ef9"
+			"Rev": "fb4ce0f53438"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
