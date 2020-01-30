@@ -84,7 +84,7 @@
 		},
 		{
 			"ImportPath": "github.com/google/gofuzz",
-			"Rev": "v1.0.0"
+			"Rev": "v1.1.0"
 		},
 		{
 			"ImportPath": "github.com/google/uuid",
@@ -220,7 +220,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "954b62493c18"
+			"Rev": "845a0cbf0d16"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
