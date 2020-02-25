@@ -1,5 +1,5 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+kind: IngressClass
 metadata:
   annotations:
     "9": "10"
@@ -30,24 +30,8 @@ metadata:
   selfLink: "5"
   uid: "7"
 spec:
-  backend:
-    serviceName: "20"
-    servicePort: "21"
-  ingressClassName: "19"
-  rules:
-  - host: "24"
-    http:
-      paths:
-      - backend:
-          serviceName: "26"
-          servicePort: "27"
-        path: "25"
-  tls:
-  - hosts:
-    - "22"
-    secretName: "23"
-status:
-  loadBalancer:
-    ingress:
-    - hostname: "29"
-      ip: "28"
+  controller: "19"
+  parameters:
+    apiGroup: "20"
+    kind: "21"
+    name: "22"
