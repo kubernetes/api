@@ -1,6 +1,6 @@
 {
-  "kind": "CSIDriver",
-  "apiVersion": "storage.k8s.io/v1beta1",
+  "kind": "CSIStorageCapacity",
+  "apiVersion": "storage.k8s.io/v1alpha1",
   "metadata": {
     "name": "2",
     "generateName": "3",
@@ -40,12 +40,20 @@
       }
     ]
   },
-  "spec": {
-    "attachRequired": false,
-    "podInfoOnMount": false,
-    "volumeLifecycleModes": [
-      "r鯹)晿\u003co,c鮽ort昍řČ扷5ƗǸ"
-    ],
-    "storageCapacity": true
-  }
+  "nodeTopology": {
+    "matchLabels": {
+      "8---jop9641lg.p-g8c2-k-912e5-c-e63-n-3n/E9.8ThjT9s-j41-0-6p-JFHn7y-74.-0MUORQQ.N2.3": "68._bQw.-dG6c-.6--_x.--0wmZk1_8._3s_-_Bq.m_4"
+    },
+    "matchExpressions": [
+      {
+        "key": "p503---477-49p---o61---4fy--9---7--9-9s-0-u5lj2--10pq-0-7-9-2-0/fP81.-.9Vdx.TB_M-H_5_.t..bG0",
+        "operator": "In",
+        "values": [
+          "D07.a_.y_y_o0_5qN2_---_M.N_._a6.9bHjdH.-.5_.I8__n"
+        ]
+      }
+    ]
+  },
+  "storageClassName": "25",
+  "capacity": "130"
 }
