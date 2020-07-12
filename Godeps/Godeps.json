@@ -140,7 +140,7 @@
 		},
 		{
 			"ImportPath": "github.com/json-iterator/go",
-			"Rev": "v1.1.9"
+			"Rev": "v1.1.10"
 		},
 		{
 			"ImportPath": "github.com/kisielk/errcheck",
@@ -296,7 +296,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "8e134319f815"
+			"Rev": "8e7d6bb9bd6d"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
