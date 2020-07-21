@@ -16,12 +16,10 @@ limitations under the License.
 
 // +k8s:deepcopy-gen=package
 // +k8s:protobuf-gen=package
-// +k8s:conversion-gen=k8s.io/apiserver/pkg/apis/apiserverinternal
 // +k8s:openapi-gen=true
-// +k8s:defaulter-gen=TypeMeta
 
 // +groupName=internal.apiserver.k8s.io
 
 // Package v1alpha1 contains the v1alpha1 version of the API used by the
 // apiservers themselves.
-package v1alpha1 // import "k8s.io/apiserver/pkg/apis/apiserverinternal/v1alpha1"
+package v1alpha1 // import "k8s.io/api/apiserverinternal/v1alpha1"
