@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1alpha1
+package v1beta1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -60,10 +60,7 @@ const (
 // +genclient
 // +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:prerelease-lifecycle-gen:introduced=1.18
-// +k8s:prerelease-lifecycle-gen:deprecated=1.20
-// +k8s:prerelease-lifecycle-gen:removed=1.21
-// +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta1,FlowSchema
+// +k8s:prerelease-lifecycle-gen:introduced=1.20
 
 // FlowSchema defines the schema of a group of flows. Note that a flow is made up of a set of inbound API requests with
 // similar attributes and is identified by a pair of strings: the name of the FlowSchema and a "flow distinguisher".
@@ -84,10 +81,7 @@ type FlowSchema struct {
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:prerelease-lifecycle-gen:introduced=1.18
-// +k8s:prerelease-lifecycle-gen:deprecated=1.20
-// +k8s:prerelease-lifecycle-gen:removed=1.21
-// +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta1,FlowSchemaList
+// +k8s:prerelease-lifecycle-gen:introduced=1.20
 
 // FlowSchemaList is a list of FlowSchema objects.
 type FlowSchemaList struct {
@@ -335,10 +329,7 @@ type FlowSchemaConditionType string
 // +genclient
 // +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:prerelease-lifecycle-gen:introduced=1.18
-// +k8s:prerelease-lifecycle-gen:deprecated=1.20
-// +k8s:prerelease-lifecycle-gen:removed=1.21
-// +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta1,PriorityLevelConfiguration
+// +k8s:prerelease-lifecycle-gen:introduced=1.20
 
 // PriorityLevelConfiguration represents the configuration of a priority level.
 type PriorityLevelConfiguration struct {
@@ -358,10 +349,7 @@ type PriorityLevelConfiguration struct {
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +k8s:prerelease-lifecycle-gen:introduced=1.18
-// +k8s:prerelease-lifecycle-gen:deprecated=1.20
-// +k8s:prerelease-lifecycle-gen:removed=1.21
-// +k8s:prerelease-lifecycle-gen:replacement=flowcontrol.apiserver.k8s.io,v1beta1,PriorityLevelConfigurationList
+// +k8s:prerelease-lifecycle-gen:introduced=1.20
 
 // PriorityLevelConfigurationList is a list of PriorityLevelConfiguration objects.
 type PriorityLevelConfigurationList struct {

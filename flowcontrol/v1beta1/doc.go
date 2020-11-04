@@ -21,5 +21,5 @@ limitations under the License.
 
 // +groupName=flowcontrol.apiserver.k8s.io
 
-// Package v1alpha1 holds api types of version v1alpha1 for group "flowcontrol.apiserver.k8s.io".
-package v1alpha1 // import "k8s.io/api/flowcontrol/v1alpha1"
+// Package v1beta1 holds api types of version v1alpha1 for group "flowcontrol.apiserver.k8s.io".
+package v1beta1 // import "k8s.io/api/flowcontrol/v1beta1"
