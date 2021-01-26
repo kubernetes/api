@@ -1,6 +1,6 @@
 {
   "kind": "JobTemplate",
-  "apiVersion": "batch/v1beta1",
+  "apiVersion": "batch/v2alpha1",
   "metadata": {
     "name": "2",
     "generateName": "3",
@@ -1577,8 +1577,7 @@
           "setHostnameAsFQDN": false
         }
       },
-      "ttlSecondsAfterFinished": 1315299341,
-      "completionMode": "ſZɐYɋsx羳ıȦj"
+      "ttlSecondsAfterFinished": 1315299341
     }
   }
 }

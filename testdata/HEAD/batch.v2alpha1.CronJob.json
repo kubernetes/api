@@ -1,6 +1,6 @@
 {
   "kind": "CronJob",
-  "apiVersion": "batch/v1beta1",
+  "apiVersion": "batch/v2alpha1",
   "metadata": {
     "name": "2",
     "generateName": "3",
@@ -1572,8 +1572,8 @@
         "ttlSecondsAfterFinished": -1285029915
       }
     },
-    "successfulJobsHistoryLimit": -1887637570,
-    "failedJobsHistoryLimit": 1755548633
+    "successfulJobsHistoryLimit": 1448332644,
+    "failedJobsHistoryLimit": 1729066291
   },
   "status": {
     "active": [
@@ -1581,7 +1581,7 @@
         "kind": "503",
         "namespace": "504",
         "name": "505",
-        "uid": "犓`ɜɅco\\穜T睭憲Ħ焵i,ŋŨN",
+        "uid": "ȫ(踶ǊđƟÝɹ橽ƴåj}c殶ėŔ裑烴",
         "apiVersion": "506",
         "resourceVersion": "507",
         "fieldPath": "508"
