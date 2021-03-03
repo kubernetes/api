@@ -1,6 +1,6 @@
 {
   "kind": "CSIStorageCapacity",
-  "apiVersion": "storage.k8s.io/v1alpha1",
+  "apiVersion": "storage.k8s.io/v1beta1",
   "metadata": {
     "name": "2",
     "generateName": "3",
