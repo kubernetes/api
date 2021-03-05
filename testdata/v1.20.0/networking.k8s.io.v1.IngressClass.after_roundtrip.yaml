@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: IngressClass
 metadata:
   annotations:
@@ -35,5 +35,4 @@ spec:
     apiGroup: "20"
     kind: "21"
     name: "22"
-    namespace: "24"
-    scope: "23"
+    scope: null

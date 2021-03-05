@@ -46,8 +46,7 @@
       "apiGroup": "20",
       "kind": "21",
       "name": "22",
-      "scope": "23",
-      "namespace": "24"
+      "scope": null
     }
   }
 }
