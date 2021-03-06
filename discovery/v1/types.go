@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1alpha1
+package v1
 
 import (
 	v1 "k8s.io/api/core/v1"
@@ -58,12 +58,6 @@ type EndpointSlice struct {
 type AddressType string
 
 const (
-	// AddressTypeIP represents an IP Address.
-	// This address type has been deprecated and has been replaced by the IPv4
-	// and IPv6 adddress types. New resources with this address type will be
-	// considered invalid. This will be fully removed in 1.18.
-	// +deprecated
-	AddressTypeIP = AddressType("IP")
 	// AddressTypeIPv4 represents an IPv4 Address.
 	AddressTypeIPv4 = AddressType(v1.IPv4Protocol)
 	// AddressTypeIPv6 represents an IPv6 Address.
@@ -86,34 +80,32 @@ type Endpoint struct {
 	// hostname of this endpoint. This field may be used by consumers of
 	// endpoints to distinguish endpoints from each other (e.g. in DNS names).
 	// Multiple endpoints which use the same hostname should be considered
-	// fungible (e.g. multiple A values in DNS). Must be lowercase and pass
-	// DNS label (RFC 1123) validation.
+	// fungible (e.g. multiple A values in DNS). Must be lowercase and pass DNS
+	// Label (RFC 1123) validation.
 	// +optional
 	Hostname *string `json:"hostname,omitempty" protobuf:"bytes,3,opt,name=hostname"`
 	// targetRef is a reference to a Kubernetes object that represents this
 	// endpoint.
 	// +optional
 	TargetRef *v1.ObjectReference `json:"targetRef,omitempty" protobuf:"bytes,4,opt,name=targetRef"`
-	// topology contains arbitrary topology information associated with the
-	// endpoint. These key/value pairs must conform with the label format.
-	// https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	// Topology may include a maximum of 16 key/value pairs. This includes, but
-	// is not limited to the following well known keys:
-	// * kubernetes.io/hostname: the value indicates the hostname of the node
-	//   where the endpoint is located. This should match the corresponding
-	//   node label.
-	// * topology.kubernetes.io/zone: the value indicates the zone where the
-	//   endpoint is located. This should match the corresponding node label.
-	// * topology.kubernetes.io/region: the value indicates the region where the
-	//   endpoint is located. This should match the corresponding node label.
-	// This field is deprecated and will be removed in future api versions.
+
+	// deprecatedTopology contains topology information part of the v1beta1
+	// API. This field is deprecated, and will be removed when the v1beta1
+	// API is removed (no sooner than kubernetes v1.24).  While this field can
+	// hold values, it is not writable through the v1 API, and any attempts to
+	// write to it will be silently ignored. Topology information can be found
+	// in the zone and nodeName fields instead.
 	// +optional
-	Topology map[string]string `json:"topology,omitempty" protobuf:"bytes,5,opt,name=topology"`
+	DeprecatedTopology map[string]string `json:"deprecatedTopology,omitempty" protobuf:"bytes,5,opt,name=deprecatedTopology"`
+
 	// nodeName represents the name of the Node hosting this endpoint. This can
 	// be used to determine endpoints local to a Node. This field can be enabled
 	// with the EndpointSliceNodeName feature gate.
 	// +optional
 	NodeName *string `json:"nodeName,omitempty" protobuf:"bytes,6,opt,name=nodeName"`
+	// zone is the name of the Zone this endpoint exists in.
+	// +optional
+	Zone *string `json:"zone,omitempty" protobuf:"bytes,7,opt,name=zone"`
 }
 
 // EndpointConditions represents the current condition of an endpoint.
@@ -165,8 +157,9 @@ type EndpointPort struct {
 	// This field follows standard Kubernetes label syntax.
 	// Un-prefixed names are reserved for IANA standard service names (as per
 	// RFC-6335 and http://www.iana.org/assignments/service-names).
-	// Non-standard protocols should use prefixed names.
-	// Default is empty string.
+	// Non-standard protocols should use prefixed names such as
+	// mycompany.com/my-custom-protocol.
+	// +optional
 	AppProtocol *string `json:"appProtocol,omitempty" protobuf:"bytes,4,name=appProtocol"`
 }
 
