@@ -5,9 +5,9 @@ module k8s.io/api
 go 1.15
 
 require (
-	github.com/gogo/protobuf v1.3.1
+	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.4.0
-	k8s.io/apimachinery v0.0.0-20210325110524-6d69a3e60ee7
+	k8s.io/apimachinery v0.0.0-20210329192041-0c7db653e2b6
 )
 
-replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20210325110524-6d69a3e60ee7
+replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20210329192041-0c7db653e2b6
