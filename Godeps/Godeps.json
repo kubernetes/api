@@ -276,7 +276,7 @@
 		},
 		{
 			"ImportPath": "golang.org/x/text",
-			"Rev": "v0.3.4"
+			"Rev": "v0.3.6"
 		},
 		{
 			"ImportPath": "golang.org/x/tools",
@@ -332,7 +332,7 @@
 		},
 		{
 			"ImportPath": "k8s.io/apimachinery",
-			"Rev": "44113beed5d3"
+			"Rev": "1e82f3b632c6"
 		},
 		{
 			"ImportPath": "k8s.io/gengo",
