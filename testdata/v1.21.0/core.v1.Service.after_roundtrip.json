@@ -9,7 +9,7 @@
     "uid": "7",
     "resourceVersion": "11042405498087606203",
     "generation": 8071137005907523419,
-    "creationTimestamp": "2061-09-19T18:13:36Z",
+    "creationTimestamp": null,
     "deletionGracePeriodSeconds": -4955867275792137171,
     "labels": {
       "7": "8"
@@ -36,39 +36,38 @@
         "manager": "16",
         "operation": "鐊唊飙Ş-U圴÷a/ɔ}摁(湗Ć]",
         "apiVersion": "17",
-        "fieldsType": "18",
-        "subresource": "19"
+        "fieldsType": "18"
       }
     ]
   },
   "spec": {
     "ports": [
       {
-        "name": "20",
+        "name": "19",
         "protocol": "@Hr鯹)晿",
-        "appProtocol": "21",
+        "appProtocol": "20",
         "port": 202283346,
-        "targetPort": "22",
+        "targetPort": "21",
         "nodePort": -474380055
       }
     ],
     "selector": {
-      "23": "24"
+      "22": "23"
     },
-    "clusterIP": "25",
+    "clusterIP": "24",
     "clusterIPs": [
-      "26"
+      "25"
     ],
     "type": "鮽ort昍řČ扷5ƗǸƢ6/ʕVŚ(Ŀ",
     "externalIPs": [
-      "27"
+      "26"
     ],
     "sessionAffinity": "甞谐颋ǅS",
-    "loadBalancerIP": "28",
+    "loadBalancerIP": "27",
     "loadBalancerSourceRanges": [
-      "29"
+      "28"
     ],
-    "externalName": "30",
+    "externalName": "29",
     "externalTrafficPolicy": "ƏS$+½H牗洝尿",
     "healthCheckNodePort": -1965738697,
     "publishNotReadyAddresses": true,
@@ -78,12 +77,12 @@
       }
     },
     "ipFamilies": [
-      "x"
+      "斬³;Ơ歿:狞夌碕ʂɭîcP$Iņɖ"
     ],
-    "ipFamilyPolicy": "%a鯿rŎǀ朲^苣f",
+    "ipFamilyPolicy": "9ȫŚ",
     "allocateLoadBalancerNodePorts": true,
     "loadBalancerClass": "31",
-    "internalTrafficPolicy": "hDrȮO励鹗"
+    "internalTrafficPolicy": ""
   },
   "status": {
     "loadBalancer": {
@@ -93,8 +92,8 @@
           "hostname": "33",
           "ports": [
             {
-              "port": 165528693,
-              "protocol": "UɦOŖ",
+              "port": 684408190,
+              "protocol": "ƈ斎AO6ĴC浔Ű",
               "error": "34"
             }
           ]
@@ -104,9 +103,9 @@
     "conditions": [
       {
         "type": "35",
-        "status": "尷ȸd賑",
-        "observedGeneration": 3519145202439908029,
-        "lastTransitionTime": "2256-09-10T15:38:25Z",
+        "status": "ž(-譵",
+        "observedGeneration": -8651056334266075769,
+        "lastTransitionTime": "2404-01-10T11:35:42Z",
         "reason": "36",
         "message": "37"
       }

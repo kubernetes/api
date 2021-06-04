@@ -4,7 +4,7 @@ metadata:
   annotations:
     "9": "10"
   clusterName: "15"
-  creationTimestamp: "2061-09-19T18:13:36Z"
+  creationTimestamp: null
   deletionGracePeriodSeconds: -4955867275792137171
   finalizers:
   - "14"
@@ -17,7 +17,6 @@ metadata:
     fieldsType: "18"
     manager: "16"
     operation: 鐊唊飙Ş-U圴÷a/ɔ}摁(湗Ć]
-    subresource: "19"
   name: "2"
   namespace: "4"
   ownerReferences:
@@ -32,32 +31,32 @@ metadata:
   uid: "7"
 spec:
   allocateLoadBalancerNodePorts: true
-  clusterIP: "25"
+  clusterIP: "24"
   clusterIPs:
-  - "26"
+  - "25"
   externalIPs:
-  - "27"
-  externalName: "30"
+  - "26"
+  externalName: "29"
   externalTrafficPolicy: ƏS$+½H牗洝尿
   healthCheckNodePort: -1965738697
-  internalTrafficPolicy: hDrȮO励鹗
+  internalTrafficPolicy: ""
   ipFamilies:
-  - x
-  ipFamilyPolicy: '%a鯿rŎǀ朲^苣f'
+  - 斬³;Ơ歿:狞夌碕ʂɭîcP$Iņɖ
+  ipFamilyPolicy: 9ȫŚ
   loadBalancerClass: "31"
-  loadBalancerIP: "28"
+  loadBalancerIP: "27"
   loadBalancerSourceRanges:
-  - "29"
+  - "28"
   ports:
-  - appProtocol: "21"
-    name: "20"
+  - appProtocol: "20"
+    name: "19"
     nodePort: -474380055
     port: 202283346
     protocol: '@Hr鯹)晿'
-    targetPort: "22"
+    targetPort: "21"
   publishNotReadyAddresses: true
   selector:
-    "23": "24"
+    "22": "23"
   sessionAffinity: 甞谐颋ǅS
   sessionAffinityConfig:
     clientIP:
@@ -65,11 +64,11 @@ spec:
   type: 鮽ort昍řČ扷5ƗǸƢ6/ʕVŚ(Ŀ
 status:
   conditions:
-  - lastTransitionTime: "2256-09-10T15:38:25Z"
+  - lastTransitionTime: "2404-01-10T11:35:42Z"
     message: "37"
-    observedGeneration: 3519145202439908029
+    observedGeneration: -8651056334266075769
     reason: "36"
-    status: 尷ȸd賑
+    status: ž(-譵
     type: "35"
   loadBalancer:
     ingress:
@@ -77,5 +76,5 @@ status:
       ip: "32"
       ports:
       - error: "34"
-        port: 165528693
-        protocol: UɦOŖ
+        port: 684408190
+        protocol: ƈ斎AO6ĴC浔Ű
