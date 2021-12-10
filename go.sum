@@ -221,8 +221,8 @@ gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b h1:h8qDotaEPuJATrMmW04NCwg7v
 gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 honnef.co/go/tools v0.0.0-20190102054323-c2f93a96b099/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
-k8s.io/apimachinery v0.0.0-20211210091738-ee64e4682c13 h1:RBfpfKSvgBQ22jWc8nOyS3tCPKG1wh0ToGJKxqkKFUc=
-k8s.io/apimachinery v0.0.0-20211210091738-ee64e4682c13/go.mod h1:CIrrPvxpAwyfOEWI3WlNnDpkZ8X0ahWBopk0ogxTXts=
+k8s.io/apimachinery v0.0.0-20211210171607-32abfd864090 h1:45YEFnUSfA7F42GEt7FH5/H/7jrMkU6Zbb4XsdHtZ40=
+k8s.io/apimachinery v0.0.0-20211210171607-32abfd864090/go.mod h1:CIrrPvxpAwyfOEWI3WlNnDpkZ8X0ahWBopk0ogxTXts=
 k8s.io/gengo v0.0.0-20210813121822-485abfe95c7c/go.mod h1:FiNAH4ZV3gBg2Kwh89tzAEV2be7d5xI0vBa/VySYy3E=
 k8s.io/klog/v2 v2.0.0/go.mod h1:PBfzABfn139FHAV07az/IF9Wp1bkk3vpT2XSJ76fSDE=
 k8s.io/klog/v2 v2.2.0/go.mod h1:Od+F08eJP+W3HUb4pSrPpgp9DGU4GzlpG/TmITuYh/Y=
