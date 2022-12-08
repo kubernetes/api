@@ -7,7 +7,7 @@ go 1.16
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.0
-	k8s.io/apimachinery v0.0.0-20221202174959-050f59113830
+	k8s.io/apimachinery v0.23.15
 )
 
-replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20221202174959-050f59113830
+replace k8s.io/apimachinery => k8s.io/apimachinery v0.23.15
