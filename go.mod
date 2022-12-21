@@ -7,7 +7,7 @@ go 1.19
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.0
-	k8s.io/apimachinery v0.0.0-20221218214745-cc480d329650
+	k8s.io/apimachinery v0.0.0-20221223015414-47a8bb64c845
 )
 
 require (
@@ -21,7 +21,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	golang.org/x/net v0.3.1-0.20221206200815-1e63c2f08a10 // indirect
+	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/text v0.5.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
@@ -34,4 +34,4 @@ require (
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
-replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20221218214745-cc480d329650
+replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20221223015414-47a8bb64c845
