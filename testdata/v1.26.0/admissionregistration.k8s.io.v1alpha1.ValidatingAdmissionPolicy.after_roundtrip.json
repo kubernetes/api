@@ -1,5 +1,5 @@
 {
-  "kind": "ValidatingAdmissionPolicyBinding",
+  "kind": "ValidatingAdmissionPolicy",
   "apiVersion": "admissionregistration.k8s.io/v1alpha1",
   "metadata": {
     "name": "nameValue",
@@ -44,12 +44,11 @@
     ]
   },
   "spec": {
-    "policyName": "policyNameValue",
-    "paramRef": {
-      "name": "nameValue",
-      "namespace": "namespaceValue"
+    "paramKind": {
+      "apiVersion": "apiVersionValue",
+      "kind": "kindValue"
     },
-    "matchResources": {
+    "matchConstraints": {
       "namespaceSelector": {
         "matchLabels": {
           "matchLabelsKey": "matchLabelsValue"
@@ -120,8 +119,13 @@
       ],
       "matchPolicy": "matchPolicyValue"
     },
-    "validationActions": [
-      "validationActionsValue"
-    ]
+    "validations": [
+      {
+        "expression": "expressionValue",
+        "message": "messageValue",
+        "reason": "reasonValue"
+      }
+    ],
+    "failurePolicy": "failurePolicyValue"
   }
 }

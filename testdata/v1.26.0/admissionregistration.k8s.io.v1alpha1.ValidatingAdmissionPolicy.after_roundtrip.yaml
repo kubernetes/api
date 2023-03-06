@@ -1,5 +1,5 @@
 apiVersion: admissionregistration.k8s.io/v1alpha1
-kind: ValidatingAdmissionPolicyBinding
+kind: ValidatingAdmissionPolicy
 metadata:
   annotations:
     annotationsKey: annotationsValue
@@ -33,7 +33,8 @@ metadata:
   selfLink: selfLinkValue
   uid: uidValue
 spec:
-  matchResources:
+  failurePolicy: failurePolicyValue
+  matchConstraints:
     excludeResourceRules:
     - apiGroups:
       - apiGroupsValue
@@ -75,9 +76,10 @@ spec:
       resources:
       - resourcesValue
       scope: scopeValue
-  paramRef:
-    name: nameValue
-    namespace: namespaceValue
-  policyName: policyNameValue
-  validationActions:
-  - validationActionsValue
+  paramKind:
+    apiVersion: apiVersionValue
+    kind: kindValue
+  validations:
+  - expression: expressionValue
+    message: messageValue
+    reason: reasonValue
