@@ -1,6 +1,6 @@
 {
   "kind": "Status",
-  "apiVersion": "resource.k8s.io/v1alpha1",
+  "apiVersion": "resource.k8s.io/v1alpha2",
   "metadata": {
     "selfLink": "selfLinkValue",
     "resourceVersion": "resourceVersionValue",

@@ -1,6 +1,6 @@
 {
-  "kind": "ResourceClass",
-  "apiVersion": "resource.k8s.io/v1alpha1",
+  "kind": "ResourceClaim",
+  "apiVersion": "resource.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -43,35 +43,53 @@
       }
     ]
   },
-  "driverName": "driverNameValue",
-  "parametersRef": {
-    "apiGroup": "apiGroupValue",
-    "kind": "kindValue",
-    "name": "nameValue",
-    "namespace": "namespaceValue"
+  "spec": {
+    "resourceClassName": "resourceClassNameValue",
+    "parametersRef": {
+      "apiGroup": "apiGroupValue",
+      "kind": "kindValue",
+      "name": "nameValue"
+    },
+    "allocationMode": "allocationModeValue"
   },
-  "suitableNodes": {
-    "nodeSelectorTerms": [
-      {
-        "matchExpressions": [
+  "status": {
+    "driverName": "driverNameValue",
+    "allocation": {
+      "resourceHandle": "resourceHandleValue",
+      "availableOnNodes": {
+        "nodeSelectorTerms": [
           {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
-            ]
-          }
-        ],
-        "matchFields": [
-          {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
+            "matchExpressions": [
+              {
+                "key": "keyValue",
+                "operator": "operatorValue",
+                "values": [
+                  "valuesValue"
+                ]
+              }
+            ],
+            "matchFields": [
+              {
+                "key": "keyValue",
+                "operator": "operatorValue",
+                "values": [
+                  "valuesValue"
+                ]
+              }
             ]
           }
         ]
+      },
+      "shareable": true
+    },
+    "reservedFor": [
+      {
+        "apiGroup": "apiGroupValue",
+        "resource": "resourceValue",
+        "name": "nameValue",
+        "uid": "uidValue"
       }
-    ]
+    ],
+    "deallocationRequested": true
   }
 }

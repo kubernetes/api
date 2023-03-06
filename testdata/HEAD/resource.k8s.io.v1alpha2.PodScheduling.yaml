@@ -1,5 +1,5 @@
-apiVersion: resource.k8s.io/v1alpha1
-kind: ResourceClaim
+apiVersion: resource.k8s.io/v1alpha2
+kind: PodScheduling
 metadata:
   annotations:
     annotationsKey: annotationsValue
@@ -33,32 +33,11 @@ metadata:
   selfLink: selfLinkValue
   uid: uidValue
 spec:
-  allocationMode: allocationModeValue
-  parametersRef:
-    apiGroup: apiGroupValue
-    kind: kindValue
-    name: nameValue
-  resourceClassName: resourceClassNameValue
+  potentialNodes:
+  - potentialNodesValue
+  selectedNode: selectedNodeValue
 status:
-  allocation:
-    availableOnNodes:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: keyValue
-          operator: operatorValue
-          values:
-          - valuesValue
-        matchFields:
-        - key: keyValue
-          operator: operatorValue
-          values:
-          - valuesValue
-    resourceHandle: resourceHandleValue
-    shareable: true
-  deallocationRequested: true
-  driverName: driverNameValue
-  reservedFor:
-  - apiGroup: apiGroupValue
-    name: nameValue
-    resource: resourceValue
-    uid: uidValue
+  resourceClaims:
+  - name: nameValue
+    unsuitableNodes:
+    - unsuitableNodesValue

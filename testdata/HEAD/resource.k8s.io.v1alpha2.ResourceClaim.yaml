@@ -1,6 +1,5 @@
-apiVersion: resource.k8s.io/v1alpha1
-driverName: driverNameValue
-kind: ResourceClass
+apiVersion: resource.k8s.io/v1alpha2
+kind: ResourceClaim
 metadata:
   annotations:
     annotationsKey: annotationsValue
@@ -33,20 +32,33 @@ metadata:
   resourceVersion: resourceVersionValue
   selfLink: selfLinkValue
   uid: uidValue
-parametersRef:
-  apiGroup: apiGroupValue
-  kind: kindValue
-  name: nameValue
-  namespace: namespaceValue
-suitableNodes:
-  nodeSelectorTerms:
-  - matchExpressions:
-    - key: keyValue
-      operator: operatorValue
-      values:
-      - valuesValue
-    matchFields:
-    - key: keyValue
-      operator: operatorValue
-      values:
-      - valuesValue
+spec:
+  allocationMode: allocationModeValue
+  parametersRef:
+    apiGroup: apiGroupValue
+    kind: kindValue
+    name: nameValue
+  resourceClassName: resourceClassNameValue
+status:
+  allocation:
+    availableOnNodes:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: keyValue
+          operator: operatorValue
+          values:
+          - valuesValue
+        matchFields:
+        - key: keyValue
+          operator: operatorValue
+          values:
+          - valuesValue
+    resourceHandle: resourceHandleValue
+    shareable: true
+  deallocationRequested: true
+  driverName: driverNameValue
+  reservedFor:
+  - apiGroup: apiGroupValue
+    name: nameValue
+    resource: resourceValue
+    uid: uidValue

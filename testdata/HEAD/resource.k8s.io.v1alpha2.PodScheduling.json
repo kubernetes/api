@@ -1,6 +1,6 @@
 {
-  "kind": "ResourceClaim",
-  "apiVersion": "resource.k8s.io/v1alpha1",
+  "kind": "PodScheduling",
+  "apiVersion": "resource.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -44,52 +44,19 @@
     ]
   },
   "spec": {
-    "resourceClassName": "resourceClassNameValue",
-    "parametersRef": {
-      "apiGroup": "apiGroupValue",
-      "kind": "kindValue",
-      "name": "nameValue"
-    },
-    "allocationMode": "allocationModeValue"
+    "selectedNode": "selectedNodeValue",
+    "potentialNodes": [
+      "potentialNodesValue"
+    ]
   },
   "status": {
-    "driverName": "driverNameValue",
-    "allocation": {
-      "resourceHandle": "resourceHandleValue",
-      "availableOnNodes": {
-        "nodeSelectorTerms": [
-          {
-            "matchExpressions": [
-              {
-                "key": "keyValue",
-                "operator": "operatorValue",
-                "values": [
-                  "valuesValue"
-                ]
-              }
-            ],
-            "matchFields": [
-              {
-                "key": "keyValue",
-                "operator": "operatorValue",
-                "values": [
-                  "valuesValue"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "shareable": true
-    },
-    "reservedFor": [
+    "resourceClaims": [
       {
-        "apiGroup": "apiGroupValue",
-        "resource": "resourceValue",
         "name": "nameValue",
-        "uid": "uidValue"
+        "unsuitableNodes": [
+          "unsuitableNodesValue"
+        ]
       }
-    ],
-    "deallocationRequested": true
+    ]
   }
 }
