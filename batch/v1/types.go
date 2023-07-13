@@ -33,8 +33,6 @@ const (
 	CronJobScheduledTimestampAnnotation = labelPrefix + "cronjob-scheduled-timestamp"
 
 	JobCompletionIndexAnnotation = labelPrefix + "job-completion-index"
-	// JobCompletionIndexLabel is defined following the format <controller>.kubernetes.io/pod-index
-	JobCompletionIndexLabel = "job.kubernetes.io/pod-index"
 	// JobTrackingFinalizer is a finalizer for Job's pods. It prevents them from
 	// being deleted before being accounted in the Job status.
 	//
