@@ -65,8 +65,6 @@ spec:
 status:
   accessModes:
   - accessModesValue
-  allocatedResourceStatuses:
-    allocatedResourceStatusesKey: allocatedResourceStatusesValue
   allocatedResources:
     allocatedResourcesKey: "0"
   capacity:

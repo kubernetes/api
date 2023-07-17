@@ -1,6 +1,6 @@
 {
   "kind": "StatefulSet",
-  "apiVersion": "apps/v1beta1",
+  "apiVersion": "apps/v1",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -558,7 +558,6 @@
                 "restartPolicy": "restartPolicyValue"
               }
             ],
-            "restartPolicy": "restartPolicyValue",
             "volumeMounts": [
               {
                 "name": "nameValue",
@@ -842,7 +841,6 @@
                 "restartPolicy": "restartPolicyValue"
               }
             ],
-            "restartPolicy": "restartPolicyValue",
             "volumeMounts": [
               {
                 "name": "nameValue",
@@ -1126,7 +1124,6 @@
                 "restartPolicy": "restartPolicyValue"
               }
             ],
-            "restartPolicy": "restartPolicyValue",
             "volumeMounts": [
               {
                 "name": "nameValue",
@@ -1796,9 +1793,6 @@
           ],
           "allocatedResources": {
             "allocatedResourcesKey": "0"
-          },
-          "allocatedResourceStatuses": {
-            "allocatedResourceStatusesKey": "allocatedResourceStatusesValue"
           }
         }
       }

@@ -109,9 +109,6 @@
     ],
     "allocatedResources": {
       "allocatedResourcesKey": "0"
-    },
-    "allocatedResourceStatuses": {
-      "allocatedResourceStatusesKey": "allocatedResourceStatusesValue"
     }
   }
 }

@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   annotations:
@@ -330,7 +330,6 @@ spec:
             limitsKey: "0"
           requests:
             requestsKey: "0"
-        restartPolicy: restartPolicyValue
         securityContext:
           allowPrivilegeEscalation: true
           capabilities:
@@ -537,7 +536,6 @@ spec:
             limitsKey: "0"
           requests:
             requestsKey: "0"
-        restartPolicy: restartPolicyValue
         securityContext:
           allowPrivilegeEscalation: true
           capabilities:
@@ -746,7 +744,6 @@ spec:
             limitsKey: "0"
           requests:
             requestsKey: "0"
-        restartPolicy: restartPolicyValue
         securityContext:
           allowPrivilegeEscalation: true
           capabilities:
@@ -1232,8 +1229,6 @@ spec:
     status:
       accessModes:
       - accessModesValue
-      allocatedResourceStatuses:
-        allocatedResourceStatusesKey: allocatedResourceStatusesValue
       allocatedResources:
         allocatedResourcesKey: "0"
       capacity:
