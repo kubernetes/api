@@ -2,12 +2,12 @@
 
 module k8s.io/api
 
-go 1.20
+go 1.21.3
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	github.com/stretchr/testify v1.8.3
-	k8s.io/apimachinery v0.0.0-20231024171030-c18d2bfed439
+	github.com/stretchr/testify v1.8.4
+	k8s.io/apimachinery v0.0.0
 )
 
 require (
@@ -36,4 +36,7 @@ require (
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
-replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20231024171030-c18d2bfed439
+replace (
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
+)
