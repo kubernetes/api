@@ -1,6 +1,26 @@
 apiVersion: resource.k8s.io/v1alpha2
-driverName: driverNameValue
-kind: ResourceClass
+driverRequests:
+- driverName: driverNameValue
+  requests:
+  - vendorParameters:
+      apiVersion: example.com/v1
+      kind: CustomType
+      spec:
+        replicas: 1
+      status:
+        available: 1
+  vendorParameters:
+    apiVersion: example.com/v1
+    kind: CustomType
+    spec:
+      replicas: 1
+    status:
+      available: 1
+generatedFrom:
+  apiGroup: apiGroupValue
+  kind: kindValue
+  name: nameValue
+kind: ResourceClaimParameters
 metadata:
   annotations:
     annotationsKey: annotationsValue
@@ -33,21 +53,4 @@ metadata:
   resourceVersion: resourceVersionValue
   selfLink: selfLinkValue
   uid: uidValue
-parametersRef:
-  apiGroup: apiGroupValue
-  kind: kindValue
-  name: nameValue
-  namespace: namespaceValue
-structuredParameters: true
-suitableNodes:
-  nodeSelectorTerms:
-  - matchExpressions:
-    - key: keyValue
-      operator: operatorValue
-      values:
-      - valuesValue
-    matchFields:
-    - key: keyValue
-      operator: operatorValue
-      values:
-      - valuesValue
+shareable: true
