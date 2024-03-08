@@ -1,5 +1,5 @@
 {
-  "kind": "ResourceClass",
+  "kind": "ResourceClaimParameters",
   "apiVersion": "resource.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
@@ -43,36 +43,42 @@
       }
     ]
   },
-  "driverName": "driverNameValue",
-  "parametersRef": {
+  "generatedFrom": {
     "apiGroup": "apiGroupValue",
     "kind": "kindValue",
-    "name": "nameValue",
-    "namespace": "namespaceValue"
+    "name": "nameValue"
   },
-  "suitableNodes": {
-    "nodeSelectorTerms": [
-      {
-        "matchExpressions": [
-          {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
-            ]
+  "shareable": true,
+  "driverRequests": [
+    {
+      "driverName": "driverNameValue",
+      "vendorParameters": {
+        "apiVersion": "example.com/v1",
+        "kind": "CustomType",
+        "spec": {
+          "replicas": 1
+        },
+        "status": {
+          "available": 1
+        }
+      },
+      "requests": [
+        {
+          "vendorParameters": {
+            "apiVersion": "example.com/v1",
+            "kind": "CustomType",
+            "spec": {
+              "replicas": 1
+            },
+            "status": {
+              "available": 1
+            }
+          },
+          "namedResources": {
+            "selector": "selectorValue"
           }
-        ],
-        "matchFields": [
-          {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "structuredParameters": true
+        }
+      ]
+    }
+  ]
 }

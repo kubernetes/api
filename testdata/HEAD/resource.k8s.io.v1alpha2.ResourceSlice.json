@@ -1,5 +1,5 @@
 {
-  "kind": "ResourceClass",
+  "kind": "ResourceSlice",
   "apiVersion": "resource.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
@@ -43,36 +43,33 @@
       }
     ]
   },
+  "nodeName": "nodeNameValue",
   "driverName": "driverNameValue",
-  "parametersRef": {
-    "apiGroup": "apiGroupValue",
-    "kind": "kindValue",
-    "name": "nameValue",
-    "namespace": "namespaceValue"
-  },
-  "suitableNodes": {
-    "nodeSelectorTerms": [
+  "namedResources": {
+    "instances": [
       {
-        "matchExpressions": [
+        "name": "nameValue",
+        "attributes": [
           {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
-            ]
-          }
-        ],
-        "matchFields": [
-          {
-            "key": "keyValue",
-            "operator": "operatorValue",
-            "values": [
-              "valuesValue"
-            ]
+            "name": "nameValue",
+            "quantity": "0",
+            "bool": true,
+            "int": 7,
+            "intSlice": {
+              "ints": [
+                1
+              ]
+            },
+            "string": "stringValue",
+            "stringSlice": {
+              "strings": [
+                "stringsValue"
+              ]
+            },
+            "version": "versionValue"
           }
         ]
       }
     ]
-  },
-  "structuredParameters": true
+  }
 }
