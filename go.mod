@@ -7,7 +7,7 @@ go 1.22.0
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/stretchr/testify v1.8.4
-	k8s.io/apimachinery v0.0.0-20240307171817-d82afe1e363a
+	k8s.io/apimachinery v0.0.0-20240307160843-0407311be590
 )
 
 require (
@@ -35,5 +35,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
-
-replace k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20240307171817-d82afe1e363a
