@@ -1,5 +1,5 @@
 {
-  "kind": "ResourceClaimParameters",
+  "kind": "DeviceClass",
   "apiVersion": "resource.k8s.io/v1alpha3",
   "metadata": {
     "name": "nameValue",
@@ -43,27 +43,19 @@
       }
     ]
   },
-  "generatedFrom": {
-    "apiGroup": "apiGroupValue",
-    "kind": "kindValue",
-    "name": "nameValue"
-  },
-  "driverRequests": [
-    {
-      "driverName": "driverNameValue",
-      "vendorParameters": {
-        "apiVersion": "example.com/v1",
-        "kind": "CustomType",
-        "spec": {
-          "replicas": 1
-        },
-        "status": {
-          "available": 1
+  "spec": {
+    "selectors": [
+      {
+        "cel": {
+          "expression": "expressionValue"
         }
-      },
-      "requests": [
-        {
-          "vendorParameters": {
+      }
+    ],
+    "config": [
+      {
+        "opaque": {
+          "driver": "driverValue",
+          "parameters": {
             "apiVersion": "example.com/v1",
             "kind": "CustomType",
             "spec": {
@@ -72,12 +64,33 @@
             "status": {
               "available": 1
             }
-          },
-          "namedResources": {
-            "selector": "selectorValue"
           }
+        }
+      }
+    ],
+    "suitableNodes": {
+      "nodeSelectorTerms": [
+        {
+          "matchExpressions": [
+            {
+              "key": "keyValue",
+              "operator": "operatorValue",
+              "values": [
+                "valuesValue"
+              ]
+            }
+          ],
+          "matchFields": [
+            {
+              "key": "keyValue",
+              "operator": "operatorValue",
+              "values": [
+                "valuesValue"
+              ]
+            }
+          ]
         }
       ]
     }
-  ]
+  }
 }
