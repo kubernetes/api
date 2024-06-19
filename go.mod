@@ -6,8 +6,8 @@ go 1.22.0
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	github.com/stretchr/testify v1.8.4
-	k8s.io/apimachinery v0.0.0-20240620180412-04fe5186a7b1
+	github.com/stretchr/testify v1.9.0
+	k8s.io/apimachinery v0.0.0
 )
 
 require (
@@ -26,7 +26,7 @@ require (
 	github.com/x448/float16 v0.8.4 // indirect
 	golang.org/x/net v0.25.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
-	google.golang.org/protobuf v1.33.0 // indirect
+	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
@@ -36,4 +36,9 @@ require (
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
+)
+
+replace (
+	k8s.io/api => ../api
+	k8s.io/apimachinery => ../apimachinery
 )
