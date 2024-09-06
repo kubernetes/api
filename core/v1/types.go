@@ -6302,7 +6302,7 @@ const (
 
 // NodeAddress contains information for the node's address.
 type NodeAddress struct {
-	// Node address type, one of Hostname, ExternalIP or InternalIP.
+	// Node address type, one of Hostname, ExternalIP, ExternalDNS or InternalIP.
 	Type NodeAddressType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=NodeAddressType"`
 	// The node address.
 	Address string `json:"address" protobuf:"bytes,2,opt,name=address"`
