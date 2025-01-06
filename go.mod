@@ -10,7 +10,7 @@ godebug winsymlink=0
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0
+	k8s.io/apimachinery v0.0.0-20250106201545-3e8e52d6a125
 )
 
 require (
@@ -36,5 +36,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.2 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
-
-replace k8s.io/apimachinery => ../apimachinery
