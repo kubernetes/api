@@ -10,7 +10,7 @@ godebug winsymlink=0
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0-20250130161731-a2cb7d3ca743
+	k8s.io/apimachinery v0.33.0-alpha.1
 )
 
 require (
