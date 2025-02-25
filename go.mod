@@ -2,13 +2,13 @@
 
 module k8s.io/api
 
-go 1.23.0
+go 1.24.0
 
-godebug default=go1.23
+godebug default=go1.24
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0-20250224154452-ee1e055b7c5f
+	k8s.io/apimachinery v0.0.0
 )
 
 require (
@@ -34,3 +34,5 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.2 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
+
+replace k8s.io/apimachinery => ../apimachinery
