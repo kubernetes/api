@@ -8,14 +8,14 @@ godebug default=go1.24
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0-20250306085752-a3f7d4eded06
+	k8s.io/apimachinery v0.0.0-20250308012722-ac04c7e41913
 )
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kr/pretty v0.3.1 // indirect
