@@ -1,4 +1,4 @@
-apiVersion: resource.k8s.io/v1beta1
+apiVersion: resource.k8s.io/v1beta2
 kind: ResourceSlice
 metadata:
   annotations:
@@ -35,41 +35,40 @@ metadata:
 spec:
   allNodes: true
   devices:
-  - basic:
-      allNodes: true
-      attributes:
-        attributesKey:
-          bool: true
-          int: 2
-          string: stringValue
-          version: versionValue
-      capacity:
-        capacityKey:
+  - allNodes: true
+    attributes:
+      attributesKey:
+        bool: true
+        int: 2
+        string: stringValue
+        version: versionValue
+    capacity:
+      capacityKey:
+        value: "0"
+    consumesCounters:
+    - counterSet: counterSetValue
+      counters:
+        countersKey:
           value: "0"
-      consumesCounters:
-      - counterSet: counterSetValue
-        counters:
-          countersKey:
-            value: "0"
-      nodeName: nodeNameValue
-      nodeSelector:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: keyValue
-            operator: operatorValue
-            values:
-            - valuesValue
-          matchFields:
-          - key: keyValue
-            operator: operatorValue
-            values:
-            - valuesValue
-      taints:
-      - effect: effectValue
-        key: keyValue
-        timeAdded: "2004-01-01T01:01:01Z"
-        value: valueValue
     name: nameValue
+    nodeName: nodeNameValue
+    nodeSelector:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: keyValue
+          operator: operatorValue
+          values:
+          - valuesValue
+        matchFields:
+        - key: keyValue
+          operator: operatorValue
+          values:
+          - valuesValue
+    taints:
+    - effect: effectValue
+      key: keyValue
+      timeAdded: "2004-01-01T01:01:01Z"
+      value: valueValue
   driver: driverValue
   nodeName: nodeNameValue
   nodeSelector:

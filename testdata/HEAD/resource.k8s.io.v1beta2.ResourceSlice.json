@@ -1,6 +1,6 @@
 {
   "kind": "ResourceSlice",
-  "apiVersion": "resource.k8s.io/v1beta1",
+  "apiVersion": "resource.k8s.io/v1beta2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -79,65 +79,63 @@
     "devices": [
       {
         "name": "nameValue",
-        "basic": {
-          "attributes": {
-            "attributesKey": {
-              "int": 2,
-              "bool": true,
-              "string": "stringValue",
-              "version": "versionValue"
+        "attributes": {
+          "attributesKey": {
+            "int": 2,
+            "bool": true,
+            "string": "stringValue",
+            "version": "versionValue"
+          }
+        },
+        "capacity": {
+          "capacityKey": {
+            "value": "0"
+          }
+        },
+        "consumesCounters": [
+          {
+            "counterSet": "counterSetValue",
+            "counters": {
+              "countersKey": {
+                "value": "0"
+              }
             }
-          },
-          "capacity": {
-            "capacityKey": {
-              "value": "0"
-            }
-          },
-          "consumesCounters": [
+          }
+        ],
+        "nodeName": "nodeNameValue",
+        "nodeSelector": {
+          "nodeSelectorTerms": [
             {
-              "counterSet": "counterSetValue",
-              "counters": {
-                "countersKey": {
-                  "value": "0"
+              "matchExpressions": [
+                {
+                  "key": "keyValue",
+                  "operator": "operatorValue",
+                  "values": [
+                    "valuesValue"
+                  ]
                 }
-              }
-            }
-          ],
-          "nodeName": "nodeNameValue",
-          "nodeSelector": {
-            "nodeSelectorTerms": [
-              {
-                "matchExpressions": [
-                  {
-                    "key": "keyValue",
-                    "operator": "operatorValue",
-                    "values": [
-                      "valuesValue"
-                    ]
-                  }
-                ],
-                "matchFields": [
-                  {
-                    "key": "keyValue",
-                    "operator": "operatorValue",
-                    "values": [
-                      "valuesValue"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          "allNodes": true,
-          "taints": [
-            {
-              "key": "keyValue",
-              "value": "valueValue",
-              "effect": "effectValue",
-              "timeAdded": "2004-01-01T01:01:01Z"
+              ],
+              "matchFields": [
+                {
+                  "key": "keyValue",
+                  "operator": "operatorValue",
+                  "values": [
+                    "valuesValue"
+                  ]
+                }
+              ]
             }
           ]
-        }
+        },
+        "allNodes": true,
+        "taints": [
+          {
+            "key": "keyValue",
+            "value": "valueValue",
+            "effect": "effectValue",
+            "timeAdded": "2004-01-01T01:01:01Z"
+          }
+        ]
       }
     ],
     "perDeviceNodeSelection": true,
