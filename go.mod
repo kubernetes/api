@@ -8,7 +8,7 @@ godebug default=go1.24
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0
+	k8s.io/apimachinery v0.0.0-20250516032956-da3bba90543c
 )
 
 require (
@@ -33,5 +33,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.7.0 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
-
-replace k8s.io/apimachinery => ../apimachinery
