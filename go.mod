@@ -2,13 +2,13 @@
 
 module k8s.io/api
 
-go 1.24.0
+go 1.25.0
 
-godebug default=go1.24
+godebug default=go1.25
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0-20250916034007-79d1b678e5a3
+	k8s.io/apimachinery v0.0.0-20250918001908-c4785d7dc9ff
 )
 
 require (
