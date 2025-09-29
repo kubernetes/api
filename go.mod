@@ -8,7 +8,7 @@ godebug default=go1.25
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	k8s.io/apimachinery v0.0.0-20250926161618-4d9ab07a99cd
+	k8s.io/apimachinery v0.0.0-20250929164018-5674a461e8a9
 )
 
 require (
