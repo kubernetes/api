@@ -6,7 +6,7 @@ go 1.25.0
 
 godebug default=go1.25
 
-require k8s.io/apimachinery v0.0.0-20251008212151-ff7ddf5d4ebc
+require k8s.io/apimachinery v0.0.0-20251013232933-de3ea85ba46a
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
