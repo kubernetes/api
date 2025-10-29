@@ -1,4 +1,4 @@
-apiVersion: storagemigration.k8s.io/v1alpha1
+apiVersion: storagemigration.k8s.io/v1beta1
 kind: StorageVersionMigration
 metadata:
   annotations:
@@ -33,15 +33,14 @@ metadata:
   selfLink: selfLinkValue
   uid: uidValue
 spec:
-  continueToken: continueTokenValue
   resource:
     group: groupValue
     resource: resourceValue
-    version: versionValue
 status:
   conditions:
-  - lastUpdateTime: "2003-01-01T01:01:01Z"
+  - lastTransitionTime: "2004-01-01T01:01:01Z"
     message: messageValue
+    observedGeneration: 3
     reason: reasonValue
     status: statusValue
     type: typeValue
