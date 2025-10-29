@@ -19,48 +19,14 @@ limitations under the License.
 
 syntax = "proto2";
 
-package k8s.io.api.storagemigration.v1alpha1;
+package k8s.io.api.storagemigration.v1beta1;
 
-import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option go_package = "k8s.io/api/storagemigration/v1alpha1";
-
-// The names of the group, the version, and the resource.
-message GroupVersionResource {
-  // The name of the group.
-  optional string group = 1;
-
-  // The name of the version.
-  optional string version = 2;
-
-  // The name of the resource.
-  optional string resource = 3;
-}
-
-// Describes the state of a migration at a certain point.
-message MigrationCondition {
-  // Type of the condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // The last time this condition was updated.
-  // +optional
-  optional .k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdateTime = 3;
-
-  // The reason for the condition's last transition.
-  // +optional
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  // +optional
-  optional string message = 5;
-}
+option go_package = "k8s.io/api/storagemigration/v1beta1";
 
 // StorageVersionMigration represents a migration of stored data to the latest
 // storage version.
@@ -87,10 +53,6 @@ message StorageVersionMigrationList {
   optional .k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   // Items is the list of StorageVersionMigration
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +listType=map
-  // +listMapKey=type
   repeated StorageVersionMigration items = 2;
 }
 
@@ -99,14 +61,7 @@ message StorageVersionMigrationSpec {
   // The resource that is being migrated. The migrator sends requests to
   // the endpoint serving the resource.
   // Immutable.
-  optional GroupVersionResource resource = 1;
-
-  // The token used in the list options to get the next chunk of objects
-  // to migrate. When the .status.conditions indicates the migration is
-  // "Running", users can use this token to check the progress of the
-  // migration.
-  // +optional
-  optional string continueToken = 2;
+  optional .k8s.io.apimachinery.pkg.apis.meta.v1.GroupResource resource = 1;
 }
 
 // Status of the storage version migration.
@@ -117,7 +72,7 @@ message StorageVersionMigrationStatus {
   // +listType=map
   // +listMapKey=type
   // +optional
-  repeated MigrationCondition conditions = 1;
+  repeated .k8s.io.apimachinery.pkg.apis.meta.v1.Condition conditions = 1;
 
   // ResourceVersion to compare with the GC cache for performing the migration.
   // This is the current resource version of given group, version and resource when
