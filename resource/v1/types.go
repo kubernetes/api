@@ -436,6 +436,59 @@ type Device struct {
 	// +optional
 	// +featureGate=DRAConsumableCapacity
 	AllowMultipleAllocations *bool `json:"allowMultipleAllocations,omitempty" protobuf:"bytes,12,opt,name=allowMultipleAllocations"`
+
+	// NodeAllocatableResourceMappings defines the mapping of node resources
+	// that are managed by the DRA driver exposing this device. This includes resources currently
+	// reported in v1.Node `status.allocatable` that are not extended resources
+	// (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#extended-resources).
+	// Examples include "cpu", "memory", "ephemeral-storage", and hugepages.
+	// In addition to standard requests made through the Pod `spec`, these resources
+	// can also be requested through claims and allocated by the DRA driver.
+	// For example, a CPU DRA driver might allocate exclusive CPUs or auxiliary node memory
+	// dependencies of an accelerator device.
+	// The keys of this map are the node-allocatable resource names (e.g., "cpu", "memory").
+	// Extended resource names are not permitted as keys.
+	// +optional
+	// +featureGate=DRANodeAllocatableResources
+	NodeAllocatableResourceMappings map[v1.ResourceName]NodeAllocatableResourceMapping `json:"nodeAllocatableResourceMappings,omitempty" protobuf:"bytes,13,opt,name=nodeAllocatableResourceMappings"`
+}
+
+// NodeAllocatableResourceMapping defines the translation between the DRA device/capacity
+// units requested to the corresponding quantity of the node allocatable resource.
+type NodeAllocatableResourceMapping struct {
+	// CapacityKey references a capacity name defined as a key in the
+	// `spec.devices[*].capacity` map. When this field is set, the value associated with
+	// this key in the `status.allocation.devices.results[*].consumedCapacity` map
+	// (for a specific claim allocation) determines the base quantity for
+	// the node allocatable resource. If `allocationMultiplier` is also set, it is
+	// multiplied with the base quantity.
+	// For example, if `spec.devices[*].capacity` has an entry "dra.example.com/memory": "128Gi",
+	// and this field is set to "dra.example.com/memory", then for a claim allocation
+	// that consumes { "dra.example.com/memory": "4Gi" } the base quantity for the
+	// node allocatable resource mapping will be "4Gi", and `allocationMultiplier` should
+	// be omitted or set to "1".
+	// +optional
+	CapacityKey *QualifiedName `json:"capacityKey,omitempty" protobuf:"bytes,1,opt,name=capacityKey"`
+
+	// AllocationMultiplier is used as a multiplier for the allocated device count or the allocated capacity in the claim.
+	// It defaults to 1 if not specified. How the field is used also depends on whether `capacityKey` is set.
+	// 1.  If `capacityKey` is NOT set: `allocationMultiplier` multiplies the device count allocated to the claim.
+	// 	   a. A DRA driver representing each CPU core as a device would have
+	//        {ResourceName: "cpu", allocationMultiplier: "2"} in its
+	//        `nodeAllocatableResourceMappings`. If 4 devices are allocated to the claim,
+	// 		  4 * 2 CPUs would be considered as allocated and subtracted from the node's capacity.
+	//     b. A GPU device that needs additional node memory per GPU allocation would
+	//        have {ResourceName: "memory", allocationMultiplier: "2Gi"}.  Each allocated
+	// 		  GPU device instance of this type will account for 2Gi of memory.
+	//
+	// 2.  If `capacityKey` IS set: `allocationMultiplier` is multiplied by the amount of that capacity consumed.
+	// 	   The final node allocatable resource amount is `consumedCapacity[capacityKey]` * `allocationMultiplier`.
+	//     For example, if a Device's capacity "dra.example.com/cores" is consumed,
+	//     and each "core" provides 2 "cpu"s, the mapping would be:
+	//     {ResourceName: "cpu", capacityKey: "dra.example.com/cores", allocationMultiplier: "2"}.
+	//     If a claim consumes 8 "dra.example.com/cores", the CPU footprint is 8 * 2 = 16.
+	// +optional
+	AllocationMultiplier *resource.Quantity `json:"allocationMultiplier,omitempty" protobuf:"bytes,2,opt,name=allocationMultiplier"`
 }
 
 // DeviceCounterConsumption defines a set of counters that
