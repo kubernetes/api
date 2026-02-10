@@ -64,7 +64,14 @@
               "key": "keyValue"
             }
           ]
-        }
+        },
+        "resourceClaims": [
+          {
+            "name": "nameValue",
+            "resourceClaimName": "resourceClaimNameValue",
+            "resourceClaimTemplateName": "resourceClaimTemplateNameValue"
+          }
+        ]
       }
     ]
   }

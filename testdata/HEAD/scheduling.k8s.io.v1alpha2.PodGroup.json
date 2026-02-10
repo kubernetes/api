@@ -62,7 +62,14 @@
           "key": "keyValue"
         }
       ]
-    }
+    },
+    "resourceClaims": [
+      {
+        "name": "nameValue",
+        "resourceClaimName": "resourceClaimNameValue",
+        "resourceClaimTemplateName": "resourceClaimTemplateNameValue"
+      }
+    ]
   },
   "status": {
     "conditions": [
@@ -73,6 +80,12 @@
         "lastTransitionTime": "2004-01-01T01:01:01Z",
         "reason": "reasonValue",
         "message": "messageValue"
+      }
+    ],
+    "resourceClaimStatuses": [
+      {
+        "name": "nameValue",
+        "resourceClaimName": "resourceClaimNameValue"
       }
     ]
   }
