@@ -2,12 +2,12 @@
 
 module k8s.io/api
 
-go 1.25.0
+go 1.26.0
 
-godebug default=go1.25
+godebug default=go1.26
 
 require (
-	k8s.io/apimachinery v0.0.0-20260305201635-b70df598017a
+	k8s.io/apimachinery v0.0.0
 	k8s.io/klog/v2 v2.130.1
 )
 
@@ -34,3 +34,5 @@ require (
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.2 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
+
+replace k8s.io/apimachinery => ../apimachinery
