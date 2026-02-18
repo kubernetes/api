@@ -57,6 +57,7 @@ type EndpointSlice struct {
 	// include a maximum of 1000 endpoints.
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Endpoints []Endpoint `json:"endpoints" protobuf:"bytes,2,rep,name=endpoints"`
 
 	// ports specifies the list of network ports exposed by each endpoint in

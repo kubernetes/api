@@ -127,6 +127,7 @@ type Role struct {
 	// Rules holds all the PolicyRules for this Role
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Rules []PolicyRule `json:"rules" protobuf:"bytes,2,rep,name=rules"`
 }
 
@@ -146,6 +147,7 @@ type RoleBinding struct {
 	// Subjects holds references to the objects the role applies to.
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Subjects []Subject `json:"subjects,omitempty" protobuf:"bytes,2,rep,name=subjects"`
 
 	// RoleRef can reference a Role in the current namespace or a ClusterRole in the global namespace.
@@ -198,6 +200,7 @@ type ClusterRole struct {
 	// Rules holds all the PolicyRules for this ClusterRole
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Rules []PolicyRule `json:"rules" protobuf:"bytes,2,rep,name=rules"`
 
 	// AggregationRule is an optional field that describes how to build the Rules for this ClusterRole.
@@ -232,6 +235,7 @@ type ClusterRoleBinding struct {
 	// Subjects holds references to the objects the role applies to.
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Subjects []Subject `json:"subjects,omitempty" protobuf:"bytes,2,rep,name=subjects"`
 
 	// RoleRef can only reference a ClusterRole in the global namespace.

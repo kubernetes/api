@@ -337,6 +337,7 @@ message Device {
   // The maximum number of attributes and capacities combined is 32.
   //
   // +optional
+  // +k8s:optional
   map<string, DeviceAttribute> attributes = 2;
 
   // Capacity defines the set of capacities for this device.
@@ -410,6 +411,7 @@ message Device {
   // +optional
   // +listType=atomic
   // +featureGate=DRADeviceTaints
+  // +k8s:optional
   repeated DeviceTaint taints = 8;
 
   // BindsToNode indicates if the usage of an allocation involving this device
@@ -923,6 +925,7 @@ message DeviceRequestAllocationResult {
   // +optional
   // +listType=atomic
   // +featureGate=DRADeviceTaints
+  // +k8s:optional
   repeated DeviceToleration tolerations = 6;
 
   // BindingConditions contains a copy of the BindingConditions
@@ -1050,6 +1053,7 @@ message DeviceSubRequest {
   // requests with unknown modes.
   //
   // +optional
+  // +k8s:optional
   optional string allocationMode = 4;
 
   // Count is used only when the count mode is "ExactCount". Must be greater than zero.
@@ -1080,6 +1084,7 @@ message DeviceSubRequest {
   // +optional
   // +listType=atomic
   // +featureGate=DRADeviceTaints
+  // +k8s:optional
   repeated DeviceToleration tolerations = 6;
 
   // Capacity define resource requirements against each capacity.
@@ -1155,6 +1160,7 @@ message DeviceToleration {
   //
   // +optional
   // +default="Equal"
+  // +k8s:optional
   optional string operator = 2;
 
   // Value is the taint value the toleration matches to.
@@ -1168,6 +1174,7 @@ message DeviceToleration {
   // When specified, allowed values are NoSchedule and NoExecute.
   //
   // +optional
+  // +k8s:optional
   optional string effect = 4;
 
   // TolerationSeconds represents the period of time the toleration (which must be
@@ -1274,6 +1281,7 @@ message ExactDeviceRequest {
   // +optional
   // +listType=atomic
   // +featureGate=DRADeviceTaints
+  // +k8s:optional
   repeated DeviceToleration tolerations = 6;
 
   // Capacity define resource requirements against each capacity.

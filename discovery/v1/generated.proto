@@ -193,6 +193,7 @@ message EndpointSlice {
   // include a maximum of 1000 endpoints.
   // +optional
   // +listType=atomic
+  // +k8s:optional
   repeated Endpoint endpoints = 2;
 
   // ports specifies the list of network ports exposed by each endpoint in

@@ -77,6 +77,7 @@ type NetworkPolicySpec struct {
 	// solely to ensure that the pods it selects are isolated by default)
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Ingress []NetworkPolicyIngressRule `json:"ingress,omitempty" protobuf:"bytes,2,rep,name=ingress"`
 
 	// egress is a list of egress rules to be applied to the selected pods. Outgoing traffic
@@ -88,6 +89,7 @@ type NetworkPolicySpec struct {
 	// This field is beta-level in 1.8
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	Egress []NetworkPolicyEgressRule `json:"egress,omitempty" protobuf:"bytes,3,rep,name=egress"`
 
 	// policyTypes is a list of rule types that the NetworkPolicy relates to.
@@ -124,6 +126,7 @@ type NetworkPolicyIngressRule struct {
 	// allows traffic only if the traffic matches at least one item in the from list.
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	From []NetworkPolicyPeer `json:"from,omitempty" protobuf:"bytes,2,rep,name=from"`
 }
 
@@ -147,6 +150,7 @@ type NetworkPolicyEgressRule struct {
 	// allows traffic only if the traffic matches at least one item in the to list.
 	// +optional
 	// +listType=atomic
+	// +k8s:optional
 	To []NetworkPolicyPeer `json:"to,omitempty" protobuf:"bytes,2,rep,name=to"`
 }
 
