@@ -1,7 +1,5 @@
-apiVersion: scheduling.k8s.io/v1alpha1
-description: descriptionValue
-globalDefault: true
-kind: PriorityClass
+apiVersion: scheduling.k8s.io/v1alpha2
+kind: Workload
 metadata:
   annotations:
     annotationsKey: annotationsValue
@@ -34,5 +32,14 @@ metadata:
   resourceVersion: resourceVersionValue
   selfLink: selfLinkValue
   uid: uidValue
-preemptionPolicy: preemptionPolicyValue
-value: 2
+spec:
+  controllerRef:
+    apiGroup: apiGroupValue
+    kind: kindValue
+    name: nameValue
+  podGroupTemplates:
+  - name: nameValue
+    schedulingPolicy:
+      basic: {}
+      gang:
+        minCount: 1

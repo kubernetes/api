@@ -1,5 +1,5 @@
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ limitations under the License.
 // +k8s:deepcopy-gen=package
 // +k8s:protobuf-gen=package
 // +k8s:openapi-gen=true
-// +k8s:openapi-model-package=io.k8s.api.scheduling.v1alpha1
+// +k8s:openapi-model-package=io.k8s.api.scheduling.v1alpha2
 
 // +groupName=scheduling.k8s.io
 
-package v1alpha1
+package v1alpha2

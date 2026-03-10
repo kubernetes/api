@@ -1,6 +1,6 @@
 {
-  "kind": "Workload",
-  "apiVersion": "scheduling.k8s.io/v1alpha1",
+  "kind": "PodGroup",
+  "apiVersion": "scheduling.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -44,20 +44,28 @@
     ]
   },
   "spec": {
-    "controllerRef": {
-      "apiGroup": "apiGroupValue",
-      "kind": "kindValue",
-      "name": "nameValue"
+    "podGroupTemplateRef": {
+      "workload": {
+        "workloadName": "workloadNameValue",
+        "podGroupTemplateName": "podGroupTemplateNameValue"
+      }
     },
-    "podGroups": [
+    "schedulingPolicy": {
+      "basic": {},
+      "gang": {
+        "minCount": 1
+      }
+    }
+  },
+  "status": {
+    "conditions": [
       {
-        "name": "nameValue",
-        "policy": {
-          "basic": {},
-          "gang": {
-            "minCount": 1
-          }
-        }
+        "type": "typeValue",
+        "status": "statusValue",
+        "observedGeneration": 3,
+        "lastTransitionTime": "2004-01-01T01:01:01Z",
+        "reason": "reasonValue",
+        "message": "messageValue"
       }
     ]
   }

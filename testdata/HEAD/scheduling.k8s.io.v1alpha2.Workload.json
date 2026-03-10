@@ -1,6 +1,6 @@
 {
-  "kind": "PriorityClass",
-  "apiVersion": "scheduling.k8s.io/v1alpha1",
+  "kind": "Workload",
+  "apiVersion": "scheduling.k8s.io/v1alpha2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -43,8 +43,22 @@
       }
     ]
   },
-  "value": 2,
-  "globalDefault": true,
-  "description": "descriptionValue",
-  "preemptionPolicy": "preemptionPolicyValue"
+  "spec": {
+    "controllerRef": {
+      "apiGroup": "apiGroupValue",
+      "kind": "kindValue",
+      "name": "nameValue"
+    },
+    "podGroupTemplates": [
+      {
+        "name": "nameValue",
+        "schedulingPolicy": {
+          "basic": {},
+          "gang": {
+            "minCount": 1
+          }
+        }
+      }
+    ]
+  }
 }
