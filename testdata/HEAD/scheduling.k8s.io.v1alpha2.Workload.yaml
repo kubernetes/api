@@ -38,7 +38,10 @@ spec:
     kind: kindValue
     name: nameValue
   podGroupTemplates:
-  - name: nameValue
+  - disruptionMode: disruptionModeValue
+    name: nameValue
+    priority: 7
+    priorityClassName: priorityClassNameValue
     resourceClaims:
     - name: nameValue
       resourceClaimName: resourceClaimNameValue

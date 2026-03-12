@@ -69,7 +69,10 @@
         "resourceClaimName": "resourceClaimNameValue",
         "resourceClaimTemplateName": "resourceClaimTemplateNameValue"
       }
-    ]
+    ],
+    "disruptionMode": "disruptionModeValue",
+    "priorityClassName": "priorityClassNameValue",
+    "priority": 7
   },
   "status": {
     "conditions": [

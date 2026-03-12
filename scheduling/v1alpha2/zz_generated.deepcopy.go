@@ -234,6 +234,16 @@ func (in *PodGroupSpec) DeepCopyInto(out *PodGroupSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.DisruptionMode != nil {
+		in, out := &in.DisruptionMode, &out.DisruptionMode
+		*out = new(DisruptionMode)
+		**out = **in
+	}
+	if in.Priority != nil {
+		in, out := &in.Priority, &out.Priority
+		*out = new(int32)
+		**out = **in
+	}
 	return
 }
 
@@ -292,6 +302,16 @@ func (in *PodGroupTemplate) DeepCopyInto(out *PodGroupTemplate) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
+	}
+	if in.DisruptionMode != nil {
+		in, out := &in.DisruptionMode, &out.DisruptionMode
+		*out = new(DisruptionMode)
+		**out = **in
+	}
+	if in.Priority != nil {
+		in, out := &in.Priority, &out.Priority
+		*out = new(int32)
+		**out = **in
 	}
 	return
 }
