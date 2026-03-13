@@ -8263,7 +8263,6 @@ type SecurityContext struct {
 	// procMount denotes the type of proc mount to use for the containers.
 	// The default value is Default which uses the container runtime defaults for
 	// readonly paths and masked paths.
-	// This requires the ProcMountType feature flag to be enabled.
 	// Note that this field cannot be set when spec.os.name is windows.
 	// +optional
 	ProcMount *ProcMountType `json:"procMount,omitempty" protobuf:"bytes,9,opt,name=procMount"`
