@@ -3629,7 +3629,7 @@ type VolumeMountStatus struct {
 	// volumeStatus represents volume-type-specific status about the mounted
 	// volume.
 	// +optional
-	VolumeStatus `json:"volumeStatus,omitempty" protobuf:"bytes,5,opt,name=volumeStatus"`
+	VolumeStatus *VolumeStatus `json:"volumeStatus,omitempty" protobuf:"bytes,5,opt,name=volumeStatus"`
 }
 
 // VolumeStatus represents the status of a mounted volume.
