@@ -14218,16 +14218,18 @@ func (m *VolumeMountStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	{
-		size, err := m.VolumeStatus.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
+	if m.VolumeStatus != nil {
+		{
+			size, err := m.VolumeStatus.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintGenerated(dAtA, i, uint64(size))
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i--
+		dAtA[i] = 0x2a
 	}
-	i--
-	dAtA[i] = 0x2a
 	if m.RecursiveReadOnly != nil {
 		i -= len(*m.RecursiveReadOnly)
 		copy(dAtA[i:], *m.RecursiveReadOnly)
@@ -20145,8 +20147,10 @@ func (m *VolumeMountStatus) Size() (n int) {
 		l = len(*m.RecursiveReadOnly)
 		n += 1 + l + sovGenerated(uint64(l))
 	}
-	l = m.VolumeStatus.Size()
-	n += 1 + l + sovGenerated(uint64(l))
+	if m.VolumeStatus != nil {
+		l = m.VolumeStatus.Size()
+		n += 1 + l + sovGenerated(uint64(l))
+	}
 	return n
 }
 
@@ -24243,7 +24247,7 @@ func (this *VolumeMountStatus) String() string {
 		`MountPath:` + fmt.Sprintf("%v", this.MountPath) + `,`,
 		`ReadOnly:` + fmt.Sprintf("%v", this.ReadOnly) + `,`,
 		`RecursiveReadOnly:` + valueToStringGenerated(this.RecursiveReadOnly) + `,`,
-		`VolumeStatus:` + strings.Replace(strings.Replace(this.VolumeStatus.String(), "VolumeStatus", "VolumeStatus", 1), `&`, ``, 1) + `,`,
+		`VolumeStatus:` + strings.Replace(this.VolumeStatus.String(), "VolumeStatus", "VolumeStatus", 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -68473,6 +68477,9 @@ func (m *VolumeMountStatus) Unmarshal(dAtA []byte) error {
 			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
+			}
+			if m.VolumeStatus == nil {
+				m.VolumeStatus = &VolumeStatus{}
 			}
 			if err := m.VolumeStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
