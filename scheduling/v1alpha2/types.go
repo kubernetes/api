@@ -27,6 +27,7 @@ import (
 // when managing the lifecycle of workloads from the scheduling perspective,
 // including scheduling, preemption, eviction and other phases.
 // Workload API enablement is toggled by the GenericWorkload feature gate.
+// +k8s:validation-gen-nolint  // to allow pre-GA tags while this API is pre-GA
 type Workload struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
@@ -125,6 +126,15 @@ type PodGroupTemplate struct {
 	//
 	// +required
 	SchedulingPolicy PodGroupSchedulingPolicy `json:"schedulingPolicy" protobuf:"bytes,2,opt,name=schedulingPolicy"`
+
+	// SchedulingConstraints defines optional scheduling constraints (e.g. topology) for this PodGroupTemplate.
+	// This field is only available when the TopologyAwareWorkloadScheduling feature gate is enabled.
+	//
+	// +featureGate=TopologyAwareWorkloadScheduling
+	// +optional
+	// +k8s:ifDisabled(TopologyAwareWorkloadScheduling)=+k8s:forbidden
+	// +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:optional
+	SchedulingConstraints *PodGroupSchedulingConstraints `json:"schedulingConstraints" protobuf:"bytes,3,opt,name=schedulingConstraints"`
 }
 
 // PodGroupSchedulingPolicy defines the scheduling configuration for a PodGroup.
@@ -177,6 +187,7 @@ type GangSchedulingPolicy struct {
 // PodGroups are created by workload controllers (Job, LWS, JobSet, etc...) from
 // Workload.podGroupTemplates.
 // PodGroup API enablement is toggled by the GenericWorkload feature gate.
+// +k8s:validation-gen-nolint  // to allow pre-GA tags while this API is pre-GA
 type PodGroup struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
@@ -227,6 +238,18 @@ type PodGroupSpec struct {
 	// +required
 	// +k8s:alpha(since:"1.36")=+k8s:immutable
 	SchedulingPolicy PodGroupSchedulingPolicy `json:"schedulingPolicy" protobuf:"bytes,2,opt,name=schedulingPolicy"`
+
+	// SchedulingConstraints defines optional scheduling constraints (e.g. topology) for this PodGroup.
+	// Controllers are expected to fill this field by copying it from a PodGroupTemplate.
+	// This field is immutable.
+	// This field is only available when the TopologyAwareWorkloadScheduling feature gate is enabled.
+	//
+	// +featureGate=TopologyAwareWorkloadScheduling
+	// +optional
+	// +k8s:ifDisabled(TopologyAwareWorkloadScheduling)=+k8s:forbidden
+	// +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:optional
+	// +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:immutable
+	SchedulingConstraints *PodGroupSchedulingConstraints `json:"schedulingConstraints,omitempty" protobuf:"bytes,3,opt,name=schedulingConstraints"`
 }
 
 // PodGroupStatus represents information about the status of a pod group.
@@ -306,4 +329,30 @@ type WorkloadPodGroupTemplateReference struct {
 	// +k8s:required
 	// +k8s:format=k8s-short-name
 	PodGroupTemplateName string `json:"podGroupTemplateName" protobuf:"bytes,2,opt,name=podGroupTemplateName"`
+}
+
+// PodGroupSchedulingConstraints defines scheduling constraints (e.g. topology) for a PodGroup.
+type PodGroupSchedulingConstraints struct {
+	// Topology defines the topology constraints for the pod group.
+	// Currently only a single topology constraint can be specified. This may change in the future.
+	//
+	// +optional
+	// +k8s:optional
+	// +k8s:maxItems=1
+	// +listType=atomic
+	// +k8s:listType=atomic
+	Topology []TopologyConstraint `json:"topology,omitempty" protobuf:"bytes,1,rep,name=topology"`
+}
+
+// TopologyConstraint defines a topology constraint for a PodGroup.
+type TopologyConstraint struct {
+	// Key specifies the key of the node label representing the topology domain.
+	// All pods within the PodGroup must be colocated within the same domain instance.
+	// Different PodGroups can land on different domain instances even if they derive from the same PodGroupTemplate.
+	// Examples: "topology.kubernetes.io/rack"
+	//
+	// +required
+	// +k8s:required
+	// +k8s:format=k8s-label-key
+	Key string `json:"key" protobuf:"bytes,1,opt,name=key"`
 }

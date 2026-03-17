@@ -49,6 +49,7 @@ message GangSchedulingPolicy {
 // PodGroups are created by workload controllers (Job, LWS, JobSet, etc...) from
 // Workload.podGroupTemplates.
 // PodGroup API enablement is toggled by the GenericWorkload feature gate.
+// +k8s:validation-gen-nolint  // to allow pre-GA tags while this API is pre-GA
 message PodGroup {
   // Standard object's metadata.
   // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
@@ -76,6 +77,19 @@ message PodGroupList {
 
   // Items is the list of PodGroups.
   repeated PodGroup items = 2;
+}
+
+// PodGroupSchedulingConstraints defines scheduling constraints (e.g. topology) for a PodGroup.
+message PodGroupSchedulingConstraints {
+  // Topology defines the topology constraints for the pod group.
+  // Currently only a single topology constraint can be specified. This may change in the future.
+  //
+  // +optional
+  // +k8s:optional
+  // +k8s:maxItems=1
+  // +listType=atomic
+  // +k8s:listType=atomic
+  repeated TopologyConstraint topology = 1;
 }
 
 // PodGroupSchedulingPolicy defines the scheduling configuration for a PodGroup.
@@ -116,6 +130,18 @@ message PodGroupSpec {
   // +required
   // +k8s:alpha(since:"1.36")=+k8s:immutable
   optional PodGroupSchedulingPolicy schedulingPolicy = 2;
+
+  // SchedulingConstraints defines optional scheduling constraints (e.g. topology) for this PodGroup.
+  // Controllers are expected to fill this field by copying it from a PodGroupTemplate.
+  // This field is immutable.
+  // This field is only available when the TopologyAwareWorkloadScheduling feature gate is enabled.
+  //
+  // +featureGate=TopologyAwareWorkloadScheduling
+  // +optional
+  // +k8s:ifDisabled(TopologyAwareWorkloadScheduling)=+k8s:forbidden
+  // +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:optional
+  // +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:immutable
+  optional PodGroupSchedulingConstraints schedulingConstraints = 3;
 }
 
 // PodGroupStatus represents information about the status of a pod group.
@@ -159,6 +185,15 @@ message PodGroupTemplate {
   //
   // +required
   optional PodGroupSchedulingPolicy schedulingPolicy = 2;
+
+  // SchedulingConstraints defines optional scheduling constraints (e.g. topology) for this PodGroupTemplate.
+  // This field is only available when the TopologyAwareWorkloadScheduling feature gate is enabled.
+  //
+  // +featureGate=TopologyAwareWorkloadScheduling
+  // +optional
+  // +k8s:ifDisabled(TopologyAwareWorkloadScheduling)=+k8s:forbidden
+  // +k8s:ifEnabled(TopologyAwareWorkloadScheduling)=+k8s:optional
+  optional PodGroupSchedulingConstraints schedulingConstraints = 3;
 }
 
 // PodGroupTemplateReference references a PodGroup template defined in some object (e.g. Workload).
@@ -172,6 +207,19 @@ message PodGroupTemplateReference {
   // +k8s:optional
   // +k8s:unionMember
   optional WorkloadPodGroupTemplateReference workload = 1;
+}
+
+// TopologyConstraint defines a topology constraint for a PodGroup.
+message TopologyConstraint {
+  // Key specifies the key of the node label representing the topology domain.
+  // All pods within the PodGroup must be colocated within the same domain instance.
+  // Different PodGroups can land on different domain instances even if they derive from the same PodGroupTemplate.
+  // Examples: "topology.kubernetes.io/rack"
+  //
+  // +required
+  // +k8s:required
+  // +k8s:format=k8s-label-key
+  optional string key = 1;
 }
 
 // TypedLocalObjectReference allows to reference typed object inside the same namespace.
@@ -207,6 +255,7 @@ message TypedLocalObjectReference {
 // when managing the lifecycle of workloads from the scheduling perspective,
 // including scheduling, preemption, eviction and other phases.
 // Workload API enablement is toggled by the GenericWorkload feature gate.
+// +k8s:validation-gen-nolint  // to allow pre-GA tags while this API is pre-GA
 message Workload {
   // Standard object's metadata.
   // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
