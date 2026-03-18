@@ -110,7 +110,7 @@ message AllocationResult {
   // AllocationTimestamp stores the time when the resources were allocated.
   // This field is not guaranteed to be set, in which case that time is unknown.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gate.
   //
   // +optional
@@ -419,7 +419,7 @@ message Device {
   // If set to true, the scheduler will set the ResourceClaim.Status.Allocation.NodeSelector
   // to match the node where the allocation was made.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gates.
   //
   // +optional
@@ -435,7 +435,7 @@ message Device {
   //
   // The conditions must be a valid condition type string.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gates.
   //
   // +optional
@@ -453,7 +453,7 @@ message Device {
   //
   // The conditions must be a valid condition type string.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gates.
   //
   // +optional
@@ -930,7 +930,7 @@ message DeviceRequestAllocationResult {
   // BindingConditions contains a copy of the BindingConditions
   // from the corresponding ResourceSlice at the time of allocation.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gates.
   //
   // +optional
@@ -943,7 +943,7 @@ message DeviceRequestAllocationResult {
   // BindingFailureConditions contains a copy of the BindingFailureConditions
   // from the corresponding ResourceSlice at the time of allocation.
   //
-  // This is an alpha field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
+  // This is a beta field and requires enabling the DRADeviceBindingConditions and DRAResourceClaimDeviceStatus
   // feature gates.
   //
   // +optional
