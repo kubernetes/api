@@ -127,7 +127,7 @@ func (PoolStatus) SwaggerDoc() map[string]string {
 }
 
 var map_ResourcePoolStatusRequest = map[string]string{
-	"":         "ResourcePoolStatusRequest triggers a one-time calculation of resource pool status based on the provided filters. The request follows a request/response pattern similar to CertificateSigningRequest - create a request, and the controller populates the status.\n\nOnce status is set, the request is considered complete and will not be reprocessed. Users should delete and recreate requests to get updated information.",
+	"":         "ResourcePoolStatusRequest triggers a one-time calculation of resource pool status based on the provided filters. Once status is set, the request is considered complete and will not be reprocessed. Users should delete and recreate requests to get updated information.",
 	"metadata": "Standard object metadata",
 	"spec":     "Spec defines the filters for which pools to include in the status. The spec is immutable once created.",
 	"status":   "Status is populated by the controller with the calculated pool status. When status is non-nil, the request is considered complete and the entire object becomes immutable.",

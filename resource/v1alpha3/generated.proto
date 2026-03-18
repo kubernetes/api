@@ -337,21 +337,18 @@ message PoolStatus {
   //
   // +optional
   // +k8s:optional
-  // +k8s:maxLength=256
+  // +k8s:maxBytes=256
   optional string validationError = 10;
 }
 
 // ResourcePoolStatusRequest triggers a one-time calculation of resource pool status
-// based on the provided filters. The request follows a request/response pattern similar
-// to CertificateSigningRequest - create a request, and the controller populates the status.
-//
-// Once status is set, the request is considered complete and will not
-// be reprocessed. Users should delete and recreate requests to get updated information.
+// based on the provided filters. Once status is set, the request is considered complete and will not be reprocessed.
+// Users should delete and recreate requests to get updated information.
 //
 // +k8s:validation-gen-nolint
 message ResourcePoolStatusRequest {
   // Standard object metadata
-  // +optional
+  // +required
   optional .k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
   // Spec defines the filters for which pools to include in the status.

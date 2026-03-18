@@ -352,17 +352,14 @@ type DeviceTaintRuleList struct {
 // +k8s:supportsSubresource="/status"
 
 // ResourcePoolStatusRequest triggers a one-time calculation of resource pool status
-// based on the provided filters. The request follows a request/response pattern similar
-// to CertificateSigningRequest - create a request, and the controller populates the status.
-//
-// Once status is set, the request is considered complete and will not
-// be reprocessed. Users should delete and recreate requests to get updated information.
+// based on the provided filters. Once status is set, the request is considered complete and will not be reprocessed.
+// Users should delete and recreate requests to get updated information.
 //
 // +k8s:validation-gen-nolint
 type ResourcePoolStatusRequest struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object metadata
-	// +optional
+	// +required
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	// Spec defines the filters for which pools to include in the status.
@@ -556,7 +553,7 @@ type PoolStatus struct {
 	//
 	// +optional
 	// +k8s:optional
-	// +k8s:maxLength=256
+	// +k8s:maxBytes=256
 	ValidationError *string `json:"validationError,omitempty" protobuf:"bytes,10,opt,name=validationError"`
 }
 
