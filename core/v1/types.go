@@ -5432,6 +5432,16 @@ type PodStatus struct {
 	// +featureGate=InPlacePodLevelResourcesVerticalScaling
 	// +optional
 	Resources *ResourceRequirements `json:"resources,omitempty" protobuf:"bytes,20,opt,name=resources"`
+
+	// NodeAllocatableResourceClaimStatuses contains the status of node-allocatable resources
+	// that were allocated for this pod through DRA claims. This includes resources currently
+	// reported in v1.Node `status.allocatable` that are not extended resources
+	// (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#extended-resources).
+	// Examples include "cpu", "memory", "ephemeral-storage", and hugepages.
+	// +featureGate=DRANodeAllocatableResources
+	// +optional
+	// +listType=atomic
+	NodeAllocatableResourceClaimStatuses []NodeAllocatableResourceClaimStatus `json:"nodeAllocatableResourceClaimStatuses,omitempty" protobuf:"bytes,21,rep,name=nodeAllocatableResourceClaimStatuses"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
@@ -8466,4 +8476,18 @@ type ImageVolumeSource struct {
 	// Defaults to Always if :latest tag is specified, or IfNotPresent otherwise.
 	// +optional
 	PullPolicy PullPolicy `json:"pullPolicy,omitempty" protobuf:"bytes,2,opt,name=pullPolicy,casttype=PullPolicy"`
+}
+
+// NodeAllocatableResourceClaimStatus describes the status of node allocatable resources allocated via DRA.
+type NodeAllocatableResourceClaimStatus struct {
+	// ResourceClaimName is the resource claim referenced by the pod that resulted in this node allocatable resource allocation.
+	// +required
+	ResourceClaimName string `json:"resourceClaimName" protobuf:"bytes,1,opt,name=resourceClaimName"`
+	// Containers lists the names of all containers in this pod that reference the claim.
+	// +optional
+	// +listType=set
+	Containers []string `json:"containers,omitempty" protobuf:"bytes,2,rep,name=containers"`
+	// Resources is a map of the node-allocatable resource name to the aggregate quantity allocated to the claim.
+	// +required
+	Resources map[ResourceName]resource.Quantity `json:"resources" protobuf:"bytes,3,rep,name=resources"`
 }
