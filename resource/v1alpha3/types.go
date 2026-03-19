@@ -354,8 +354,6 @@ type DeviceTaintRuleList struct {
 // ResourcePoolStatusRequest triggers a one-time calculation of resource pool status
 // based on the provided filters. Once status is set, the request is considered complete and will not be reprocessed.
 // Users should delete and recreate requests to get updated information.
-//
-// +k8s:validation-gen-nolint
 type ResourcePoolStatusRequest struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object metadata
