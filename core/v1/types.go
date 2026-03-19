@@ -669,6 +669,17 @@ const (
 	PersistentVolumeClaimVolumeModifyVolumeError PersistentVolumeClaimConditionType = "ModifyVolumeError"
 	// Volume is being modified
 	PersistentVolumeClaimVolumeModifyingVolume PersistentVolumeClaimConditionType = "ModifyingVolume"
+
+	// PersistentVolumeClaimUnused indicates whether the PVC is currently not in use by any Pod.
+	// When status is True, the PVC is not referenced by any non-terminal Pod.
+	// The lastTransitionTime indicates when the PVC last transitioned to being unused.
+	//
+	// Both in-use time and unused time duration indicated by this condition may be shorter or
+	// slightly longer than actual in-use time or unused time because of processing delays or
+	// when this feature was enabled in the cluster.
+	//
+	// Requires PersistentVolumeClaimUnusedSinceTime alpha featuregate
+	PersistentVolumeClaimUnused PersistentVolumeClaimConditionType = "Unused"
 )
 
 // +enum
