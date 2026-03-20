@@ -268,7 +268,14 @@ type ResourcePool struct {
 
 const ResourceSliceMaxSharedCapacity = 128
 const ResourceSliceMaxDevices = 128
-const ResourceSliceMaxDevicesWithTaintsOrConsumesCounters = 64
+
+// ResourceSliceMaxDevicesWithAdvancedFeatures defines the maximum number of devices in a ResourceSlice
+// if any of those devices uses advanced features:
+// - device taints (DRADeviceTaints feature gate)
+// - consuming counters (DRAPartitionableDevices feature gate)
+// - list attributes (DRAListTypeAttributes feature gate)
+const ResourceSliceMaxDevicesWithAdvancedFeatures = 64
+
 const PoolNameMaxLength = validation.DNS1123SubdomainMaxLength // Same as for a single node name.
 const BindingConditionsMaxSize = 4
 const BindingFailureConditionsMaxSize = 4
