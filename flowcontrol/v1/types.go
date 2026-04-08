@@ -438,7 +438,6 @@ type PriorityLevelConfigurationSpec struct {
 	// +optional
 	// +k8s:alpha(since: "1.36")=+k8s:optional
 	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Limited")=+k8s:required
-	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Exempt")=+k8s:forbidden
 	Limited *LimitedPriorityLevelConfiguration `json:"limited,omitempty" protobuf:"bytes,2,opt,name=limited"`
 
 	// `exempt` specifies how requests are handled for an exempt priority level.
@@ -449,7 +448,6 @@ type PriorityLevelConfigurationSpec struct {
 	// +optional
 	// +k8s:alpha(since: "1.36")=+k8s:optional
 	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Exempt")=+k8s:optional
-	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Limited")=+k8s:forbidden
 	Exempt *ExemptPriorityLevelConfiguration `json:"exempt,omitempty" protobuf:"bytes,3,opt,name=exempt"`
 }
 
@@ -583,7 +581,6 @@ type LimitResponse struct {
 	// +optional
 	// +k8s:alpha(since: "1.36")=+k8s:optional
 	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Queue")=+k8s:required
-	// +k8s:alpha(since: "1.36")=+k8s:ifMode("Reject")=+k8s:forbidden
 	Queuing *QueuingConfiguration `json:"queuing,omitempty" protobuf:"bytes,2,opt,name=queuing"`
 }
 
