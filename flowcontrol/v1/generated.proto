@@ -180,15 +180,15 @@ message LimitResponse {
   // Required.
   // +unionDiscriminator
   // +k8s:alpha(since: "1.36")=+k8s:required
-  // +k8s:alpha(since: "1.36")=+k8s:discriminator
+  // +k8s:alpha(since: "1.36")=+k8s:modeDiscriminator
   optional string type = 1;
 
   // `queuing` holds the configuration parameters for queuing.
   // This field may be non-empty only if `type` is `"Queue"`.
   // +optional
   // +k8s:alpha(since: "1.36")=+k8s:optional
-  // +k8s:alpha(since: "1.36")=+k8s:member("Queue")=+k8s:required
-  // +k8s:alpha(since: "1.36")=+k8s:member("Reject")=+k8s:forbidden
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Queue")=+k8s:required
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Reject")=+k8s:forbidden
   optional QueuingConfiguration queuing = 2;
 }
 
@@ -373,15 +373,15 @@ message PriorityLevelConfigurationSpec {
   // Required.
   // +unionDiscriminator
   // +k8s:alpha(since: "1.36")=+k8s:required
-  // +k8s:alpha(since: "1.36")=+k8s:discriminator
+  // +k8s:alpha(since: "1.36")=+k8s:modeDiscriminator
   optional string type = 1;
 
   // `limited` specifies how requests are handled for a Limited priority level.
   // This field must be non-empty if and only if `type` is `"Limited"`.
   // +optional
   // +k8s:alpha(since: "1.36")=+k8s:optional
-  // +k8s:alpha(since: "1.36")=+k8s:member("Limited")=+k8s:required
-  // +k8s:alpha(since: "1.36")=+k8s:member("Exempt")=+k8s:forbidden
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Limited")=+k8s:required
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Exempt")=+k8s:forbidden
   optional LimitedPriorityLevelConfiguration limited = 2;
 
   // `exempt` specifies how requests are handled for an exempt priority level.
@@ -391,8 +391,8 @@ message PriorityLevelConfigurationSpec {
   // for `ExemptPriorityLevelConfiguration` apply.
   // +optional
   // +k8s:alpha(since: "1.36")=+k8s:optional
-  // +k8s:alpha(since: "1.36")=+k8s:member("Exempt")=+k8s:optional
-  // +k8s:alpha(since: "1.36")=+k8s:member("Limited")=+k8s:forbidden
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Exempt")=+k8s:optional
+  // +k8s:alpha(since: "1.36")=+k8s:ifMode("Limited")=+k8s:forbidden
   optional ExemptPriorityLevelConfiguration exempt = 3;
 }
 
