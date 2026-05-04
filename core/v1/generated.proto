@@ -6928,8 +6928,7 @@ message VolumeMount {
   // +optional
   optional string recursiveReadOnly = 7;
 
-  // Path within the container at which the volume should be mounted.  Must
-  // not contain ':'.
+  // Path within the container at which the volume should be mounted.
   optional string mountPath = 3;
 
   // Path within the volume from which the container's volume should be mounted.
