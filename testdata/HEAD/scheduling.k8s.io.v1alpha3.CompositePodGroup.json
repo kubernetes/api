@@ -1,5 +1,5 @@
 {
-  "kind": "PodGroup",
+  "kind": "CompositePodGroup",
   "apiVersion": "scheduling.k8s.io/v1alpha3",
   "metadata": {
     "name": "nameValue",
@@ -52,30 +52,11 @@
     "schedulingPolicy": {
       "basic": {},
       "gang": {
-        "minCount": 1
+        "minGroupCount": 1
       }
-    },
-    "schedulingConstraints": {
-      "topology": [
-        {
-          "key": "keyValue"
-        }
-      ]
-    },
-    "resourceClaims": [
-      {
-        "name": "nameValue",
-        "resourceClaimName": "resourceClaimNameValue",
-        "resourceClaimTemplateName": "resourceClaimTemplateNameValue"
-      }
-    ],
-    "disruptionMode": {
-      "single": {},
-      "all": {}
     },
     "priorityClassName": "priorityClassNameValue",
-    "priority": 8,
-    "preemptionPolicy": "preemptionPolicyValue"
+    "priority": 5
   },
   "status": {
     "conditions": [
@@ -86,12 +67,6 @@
         "lastTransitionTime": "2004-01-01T01:01:01Z",
         "reason": "reasonValue",
         "message": "messageValue"
-      }
-    ],
-    "resourceClaimStatuses": [
-      {
-        "name": "nameValue",
-        "resourceClaimName": "resourceClaimNameValue"
       }
     ]
   }
