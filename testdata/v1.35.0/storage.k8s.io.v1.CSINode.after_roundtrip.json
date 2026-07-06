@@ -1,6 +1,6 @@
 {
   "kind": "CSINode",
-  "apiVersion": "storage.k8s.io/v1beta1",
+  "apiVersion": "storage.k8s.io/v1",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -57,19 +57,5 @@
       }
     ]
   },
-  "status": {
-    "storageHealth": [
-      {
-        "name": "nameValue",
-        "status": "statusValue",
-        "reason": "reasonValue",
-        "message": "messageValue",
-        "accessModes": [
-          "accessModesValue"
-        ],
-        "volumeMode": "volumeModeValue",
-        "lastTransitionTime": "2007-01-01T01:01:01Z"
-      }
-    ]
-  }
+  "status": {}
 }

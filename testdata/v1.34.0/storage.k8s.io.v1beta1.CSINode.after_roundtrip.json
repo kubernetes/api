@@ -57,19 +57,5 @@
       }
     ]
   },
-  "status": {
-    "storageHealth": [
-      {
-        "name": "nameValue",
-        "status": "statusValue",
-        "reason": "reasonValue",
-        "message": "messageValue",
-        "accessModes": [
-          "accessModesValue"
-        ],
-        "volumeMode": "volumeModeValue",
-        "lastTransitionTime": "2007-01-01T01:01:01Z"
-      }
-    ]
-  }
+  "status": {}
 }
