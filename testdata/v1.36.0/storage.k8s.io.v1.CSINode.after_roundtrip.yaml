@@ -1,4 +1,4 @@
-apiVersion: storage.k8s.io/v1beta1
+apiVersion: storage.k8s.io/v1
 kind: CSINode
 metadata:
   annotations:
@@ -40,13 +40,4 @@ spec:
     nodeID: nodeIDValue
     topologyKeys:
     - topologyKeysValue
-status:
-  storageHealth:
-  - healthConditions:
-    - accessMode: accessModeValue
-      lastTransitionTime: "2006-01-01T01:01:01Z"
-      message: messageValue
-      reason: reasonValue
-      status: statusValue
-      volumeMode: volumeModeValue
-    name: nameValue
+status: {}
