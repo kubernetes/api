@@ -215,7 +215,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -233,7 +232,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -247,7 +245,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -257,7 +254,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -280,7 +276,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -290,7 +285,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -353,7 +347,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -363,7 +356,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -451,7 +443,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -469,7 +460,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -483,7 +473,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -493,7 +482,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -516,7 +504,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -526,7 +513,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -589,7 +575,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -599,7 +584,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -627,9 +611,6 @@ spec:
       subPath: subPathValue
       subPathExpr: subPathExprValue
     workingDir: workingDirValue
-  evictionResponders:
-  - name: nameValue
-    priority: 2
   hostAliases:
   - hostnames:
     - hostnamesValue
@@ -693,7 +674,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -711,7 +691,6 @@ spec:
             value: valueValue
           path: pathValue
           port: portValue
-          protocol: protocolValue
           scheme: schemeValue
         sleep:
           seconds: 1
@@ -725,7 +704,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -735,7 +713,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -758,7 +735,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -768,7 +744,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -831,7 +806,6 @@ spec:
         - commandValue
       failureThreshold: 6
       grpc:
-        mode: modeValue
         port: 1
         service: serviceValue
       httpGet:
@@ -841,7 +815,6 @@ spec:
           value: valueValue
         path: pathValue
         port: portValue
-        protocol: protocolValue
         scheme: schemeValue
       initialDelaySeconds: 2
       periodSeconds: 4
@@ -991,12 +964,10 @@ spec:
       volumeID: volumeIDValue
     configMap:
       defaultMode: 3
-      defaultUser: 5
       items:
       - key: keyValue
         mode: 3
         path: pathValue
-        user: 4
       name: nameValue
       optional: true
     csi:
@@ -1009,7 +980,6 @@ spec:
         volumeAttributesKey: volumeAttributesValue
     downwardAPI:
       defaultMode: 2
-      defaultUser: 3
       items:
       - fieldRef:
           apiVersion: apiVersionValue
@@ -1020,10 +990,8 @@ spec:
           containerName: containerNameValue
           divisor: "0"
           resource: resourceValue
-        user: 5
     emptyDir:
       medium: mediumValue
-      mode: 3
       sizeLimit: "0"
     ephemeral:
       volumeClaimTemplate:
@@ -1157,7 +1125,6 @@ spec:
       volumeID: volumeIDValue
     projected:
       defaultMode: 2
-      defaultUser: 3
       sources:
       - clusterTrustBundle:
           labelSelector:
@@ -1172,13 +1139,11 @@ spec:
           optional: true
           path: pathValue
           signerName: signerNameValue
-          user: 6
         configMap:
           items:
           - key: keyValue
             mode: 3
             path: pathValue
-            user: 4
           name: nameValue
           optional: true
         downwardAPI:
@@ -1192,7 +1157,6 @@ spec:
               containerName: containerNameValue
               divisor: "0"
               resource: resourceValue
-            user: 5
         podCertificate:
           certificateChainPath: certificateChainPathValue
           credentialBundlePath: credentialBundlePathValue
@@ -1200,7 +1164,6 @@ spec:
           keyType: keyTypeValue
           maxExpirationSeconds: 3
           signerName: signerNameValue
-          user: 8
           userAnnotations:
             userAnnotationsKey: userAnnotationsValue
         secret:
@@ -1208,14 +1171,12 @@ spec:
           - key: keyValue
             mode: 3
             path: pathValue
-            user: 4
           name: nameValue
           optional: true
         serviceAccountToken:
           audience: audienceValue
           expirationSeconds: 2
           path: pathValue
-          user: 4
     quobyte:
       group: groupValue
       readOnly: true
@@ -1248,12 +1209,10 @@ spec:
       volumeName: volumeNameValue
     secret:
       defaultMode: 3
-      defaultUser: 5
       items:
       - key: keyValue
         mode: 3
         path: pathValue
-        user: 4
       optional: true
       secretName: secretNameValue
     storageos:
@@ -1493,13 +1452,6 @@ status:
   nodeAllocatableResourceClaimStatuses:
   - containers:
     - containersValue
-    mapping:
-    - name: nameValue
-      quantity: "0"
-    overhead:
-    - name: nameValue
-      perContainer: "0"
-      perPod: "0"
     resourceClaimName: resourceClaimNameValue
   nominatedNodeName: nominatedNodeNameValue
   observedGeneration: 17
@@ -1522,10 +1474,3 @@ status:
     requests:
       requestsKey: "0"
   startTime: "2007-01-01T01:01:01Z"
-  volumeHealth:
-  - healthConditions:
-    - message: messageValue
-      reason: reasonValue
-      status: statusValue
-    lastTransitionTime: "2003-01-01T01:01:01Z"
-    name: nameValue

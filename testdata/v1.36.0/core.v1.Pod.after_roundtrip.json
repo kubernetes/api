@@ -53,8 +53,7 @@
         },
         "emptyDir": {
           "medium": "mediumValue",
-          "sizeLimit": "0",
-          "mode": 3
+          "sizeLimit": "0"
         },
         "gcePersistentDisk": {
           "pdName": "pdNameValue",
@@ -79,13 +78,11 @@
             {
               "key": "keyValue",
               "path": "pathValue",
-              "mode": 3,
-              "user": 4
+              "mode": 3
             }
           ],
           "defaultMode": 3,
-          "optional": true,
-          "defaultUser": 5
+          "optional": true
         },
         "nfs": {
           "server": "serverValue",
@@ -180,12 +177,10 @@
                 "resource": "resourceValue",
                 "divisor": "0"
               },
-              "mode": 4,
-              "user": 5
+              "mode": 4
             }
           ],
-          "defaultMode": 2,
-          "defaultUser": 3
+          "defaultMode": 2
         },
         "fc": {
           "targetWWNs": [
@@ -209,13 +204,11 @@
             {
               "key": "keyValue",
               "path": "pathValue",
-              "mode": 3,
-              "user": 4
+              "mode": 3
             }
           ],
           "defaultMode": 3,
-          "optional": true,
-          "defaultUser": 5
+          "optional": true
         },
         "vsphereVolume": {
           "volumePath": "volumePathValue",
@@ -252,8 +245,7 @@
                   {
                     "key": "keyValue",
                     "path": "pathValue",
-                    "mode": 3,
-                    "user": 4
+                    "mode": 3
                   }
                 ],
                 "optional": true
@@ -271,8 +263,7 @@
                       "resource": "resourceValue",
                       "divisor": "0"
                     },
-                    "mode": 4,
-                    "user": 5
+                    "mode": 4
                   }
                 ]
               },
@@ -282,8 +273,7 @@
                   {
                     "key": "keyValue",
                     "path": "pathValue",
-                    "mode": 3,
-                    "user": 4
+                    "mode": 3
                   }
                 ],
                 "optional": true
@@ -291,8 +281,7 @@
               "serviceAccountToken": {
                 "audience": "audienceValue",
                 "expirationSeconds": 2,
-                "path": "pathValue",
-                "user": 4
+                "path": "pathValue"
               },
               "clusterTrustBundle": {
                 "name": "nameValue",
@@ -312,8 +301,7 @@
                   ]
                 },
                 "optional": true,
-                "path": "pathValue",
-                "user": 6
+                "path": "pathValue"
               },
               "podCertificate": {
                 "signerName": "signerNameValue",
@@ -324,13 +312,11 @@
                 "certificateChainPath": "certificateChainPathValue",
                 "userAnnotations": {
                   "userAnnotationsKey": "userAnnotationsValue"
-                },
-                "user": 8
+                }
               }
             }
           ],
-          "defaultMode": 2,
-          "defaultUser": 3
+          "defaultMode": 2
         },
         "portworxVolume": {
           "volumeID": "volumeIDValue",
@@ -596,8 +582,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -605,8 +590,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -631,8 +615,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -640,8 +623,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -666,8 +648,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -675,8 +656,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -702,8 +682,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -729,8 +708,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -918,8 +896,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -927,8 +904,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -953,8 +929,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -962,8 +937,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -988,8 +962,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -997,8 +970,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -1024,8 +996,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -1051,8 +1022,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -1240,8 +1210,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -1249,8 +1218,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -1275,8 +1243,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -1284,8 +1251,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -1310,8 +1276,7 @@
                 "name": "nameValue",
                 "value": "valueValue"
               }
-            ],
-            "protocol": "protocolValue"
+            ]
           },
           "tcpSocket": {
             "port": "portValue",
@@ -1319,8 +1284,7 @@
           },
           "grpc": {
             "port": 1,
-            "service": "serviceValue",
-            "mode": "modeValue"
+            "service": "serviceValue"
           },
           "initialDelaySeconds": 2,
           "timeoutSeconds": 3,
@@ -1346,8 +1310,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -1373,8 +1336,7 @@
                   "name": "nameValue",
                   "value": "valueValue"
                 }
-              ],
-              "protocol": "protocolValue"
+              ]
             },
             "tcpSocket": {
               "port": "portValue",
@@ -1829,13 +1791,7 @@
     "hostnameOverride": "hostnameOverrideValue",
     "schedulingGroup": {
       "podGroupName": "podGroupNameValue"
-    },
-    "evictionResponders": [
-      {
-        "name": "nameValue",
-        "priority": 2
-      }
-    ]
+    }
   },
   "status": {
     "observedGeneration": 17,
@@ -2204,33 +2160,7 @@
         "resourceClaimName": "resourceClaimNameValue",
         "containers": [
           "containersValue"
-        ],
-        "mapping": [
-          {
-            "name": "nameValue",
-            "quantity": "0"
-          }
-        ],
-        "overhead": [
-          {
-            "name": "nameValue",
-            "perPod": "0",
-            "perContainer": "0"
-          }
         ]
-      }
-    ],
-    "volumeHealth": [
-      {
-        "name": "nameValue",
-        "healthConditions": [
-          {
-            "status": "statusValue",
-            "reason": "reasonValue",
-            "message": "messageValue"
-          }
-        ],
-        "lastTransitionTime": "2003-01-01T01:01:01Z"
       }
     ]
   }

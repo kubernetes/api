@@ -1,6 +1,6 @@
 {
   "kind": "ResourceSlice",
-  "apiVersion": "resource.k8s.io/v1",
+  "apiVersion": "resource.k8s.io/v1beta2",
   "metadata": {
     "name": "nameValue",
     "generateName": "generateNameValue",
@@ -166,20 +166,7 @@
         "bindingFailureConditions": [
           "bindingFailureConditionsValue"
         ],
-        "allowMultipleAllocations": true,
-        "nodeAllocatableResources": {
-          "nodeAllocatableResourcesKey": {
-            "mapping": {
-              "capacityKey": "capacityKeyValue",
-              "capacityMultiplier": "0",
-              "deviceMultiplier": "0"
-            },
-            "overhead": {
-              "perPod": "0",
-              "perContainer": "0"
-            }
-          }
-        }
+        "allowMultipleAllocations": true
       }
     ],
     "perDeviceNodeSelection": true,
@@ -192,7 +179,6 @@
           }
         }
       }
-    ],
-    "partitionTypeAttribute": "partitionTypeAttributeValue"
+    ]
   }
 }

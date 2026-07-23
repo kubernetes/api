@@ -167,20 +167,7 @@
           "bindingFailureConditions": [
             "bindingFailureConditionsValue"
           ],
-          "allowMultipleAllocations": true,
-          "nodeAllocatableResources": {
-            "nodeAllocatableResourcesKey": {
-              "mapping": {
-                "capacityKey": "capacityKeyValue",
-                "capacityMultiplier": "0",
-                "deviceMultiplier": "0"
-              },
-              "overhead": {
-                "perPod": "0",
-                "perContainer": "0"
-              }
-            }
-          }
+          "allowMultipleAllocations": true
         }
       }
     ],
@@ -194,7 +181,6 @@
           }
         }
       }
-    ],
-    "partitionTypeAttribute": "partitionTypeAttributeValue"
+    ]
   }
 }
