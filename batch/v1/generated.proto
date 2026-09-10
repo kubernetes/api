@@ -251,7 +251,7 @@ message JobSpec {
   // More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int32 parallelism = 1;
 
   // completions specifies the desired number of successfully finished pods the
@@ -262,7 +262,7 @@ message JobSpec {
   // More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int32 completions = 2;
 
   // activeDeadlineSeconds specifies the duration in seconds relative to the startTime that the job
@@ -272,7 +272,7 @@ message JobSpec {
   // resumed again.
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int64 activeDeadlineSeconds = 3;
 
   // podFailurePolicy specifies the policy of handling failed pods. In particular, it allows to
@@ -300,7 +300,7 @@ message JobSpec {
   // When backoffLimitPerIndex is specified, backoffLimit defaults to 2147483647.
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int32 backoffLimit = 7;
 
   // backoffLimitPerIndex specifies the limit for the number of retries within an
@@ -311,7 +311,7 @@ message JobSpec {
   // policy is Never. The field is immutable.
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int32 backoffLimitPerIndex = 12;
 
   // maxFailedIndexes specifies the maximal number of failed indexes before marking the Job as
@@ -324,7 +324,7 @@ message JobSpec {
   // less than or equal to 10^4 when is completions greater than 10^5.
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   // +k8s:alpha(since: "1.37")=+k8s:dependentRequired("backoffLimitPerIndex")
   optional int32 maxFailedIndexes = 13;
 
@@ -362,7 +362,7 @@ message JobSpec {
   // the Job becomes eligible to be deleted immediately after it finishes.
   // +optional
   // +k8s:optional
-  // +k8s:alpha(since: "1.37")=+k8s:minimum=0
+  // +k8s:alpha(since: "1.38")=+k8s:minimum=0
   optional int32 ttlSecondsAfterFinished = 8;
 
   // completionMode specifies how Pod completions are tracked. It can be
