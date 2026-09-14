@@ -29,3 +29,5 @@ require (
 	sigs.k8s.io/structured-merge-diff/v7 v7.0.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
+
+replace k8s.io/streaming => k8s.io/streaming v0.0.0-20260914154742-f99df5dfe25e
