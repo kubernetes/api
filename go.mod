@@ -7,7 +7,7 @@ go 1.27.0
 godebug default=go1.27
 
 require (
-	k8s.io/apimachinery v0.0.0-20260912220903-93e88e8ed40d
+	k8s.io/apimachinery v0.0.0-20260916180943-9205a24d6503
 	k8s.io/klog/v2 v2.140.0
 )
 
@@ -29,5 +29,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v7 v7.0.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
-
-replace k8s.io/streaming => k8s.io/streaming v0.0.0-20260914154742-f99df5dfe25e
