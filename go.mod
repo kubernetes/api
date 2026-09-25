@@ -7,13 +7,13 @@ go 1.27.0
 godebug default=go1.27
 
 require (
-	k8s.io/apimachinery v0.0.0-20260925175343-be1093d69c39
+	k8s.io/apimachinery v0.0.0-20260925175345-fdc546200a6d
 	k8s.io/klog/v2 v2.140.0
 )
 
 require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
-	github.com/fxamacker/cbor/v2 v2.9.1 // indirect
+	github.com/fxamacker/cbor/v2 v2.9.4 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
