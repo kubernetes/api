@@ -7,7 +7,8 @@ go 1.27.0
 godebug default=go1.27
 
 require (
-	k8s.io/apimachinery v0.0.0-20261009021810-830a138b85ad
+	github.com/google/go-cmp v0.7.0
+	k8s.io/apimachinery v0.0.0
 	k8s.io/klog/v2 v2.140.0
 )
 
@@ -15,7 +16,6 @@ require (
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/fxamacker/cbor/v2 v2.9.4 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
-	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
@@ -27,4 +27,9 @@ require (
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v7 v7.0.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
+)
+
+replace (
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/streaming => ../streaming
 )
