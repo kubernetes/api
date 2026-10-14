@@ -8,7 +8,7 @@ godebug default=go1.27
 
 require (
 	github.com/google/go-cmp v0.7.0
-	k8s.io/apimachinery v0.0.0-20261013175632-1ddb7c92fa97
+	k8s.io/apimachinery v0.0.0
 	k8s.io/klog/v2 v2.140.0
 )
 
@@ -27,4 +27,9 @@ require (
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v7 v7.0.0 // indirect
 	sigs.k8s.io/yaml v1.6.0 // indirect
+)
+
+replace (
+	k8s.io/apimachinery => ../apimachinery
+	k8s.io/streaming => ../streaming
 )
